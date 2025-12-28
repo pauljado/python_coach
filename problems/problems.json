@@ -1,0 +1,744 @@
+[
+  {
+    "id": "syntax_001",
+    "title": "Hello, World!",
+    "difficulty": "Beginner",
+    "category": "Syntax",
+    "description": "Write a program that prints 'Hello, World!' to the console.\n\nThis is the traditional first program for learning any programming language.",
+    "starter_code": "# Write your code below\n",
+    "hints": [
+      "Use the print() function to display text",
+      "Text strings should be enclosed in quotes (single or double)",
+      "The syntax is: print('your text here')"
+    ],
+    "solution": "print('Hello, World!')",
+    "expected_output": "Hello, World!\n"
+  },
+  {
+    "id": "syntax_002",
+    "title": "Variable Assignment",
+    "difficulty": "Beginner",
+    "category": "Syntax",
+    "description": "Create a variable called 'name' and assign it your name (as a string). Then create a variable called 'age' and assign it a number. Print both variables.",
+    "starter_code": "# Create your variables below\n\n# Print the variables\n",
+    "hints": [
+      "Variables are assigned using the = operator",
+      "Strings need quotes, numbers don't",
+      "Example: my_var = 'hello'"
+    ],
+    "solution": "name = 'Alice'\nage = 25\nprint(name)\nprint(age)",
+    "test_cases": [
+      {
+        "check_type": "variable_exists",
+        "variables": ["name", "age"]
+      }
+    ]
+  },
+  {
+    "id": "syntax_003",
+    "title": "Basic Arithmetic",
+    "difficulty": "Beginner",
+    "category": "Syntax",
+    "description": "Calculate and print the result of:\n1. 15 + 27\n2. 100 - 45\n3. 8 * 7\n4. 144 / 12\n\nPrint each result on a separate line.",
+    "starter_code": "# Calculate and print each result\n",
+    "hints": [
+      "Use + for addition, - for subtraction",
+      "Use * for multiplication, / for division",
+      "You can print the calculation directly: print(5 + 3)"
+    ],
+    "solution": "print(15 + 27)\nprint(100 - 45)\nprint(8 * 7)\nprint(144 / 12)",
+    "expected_output": "42\n55\n56\n12.0\n"
+  },
+  {
+    "id": "syntax_004",
+    "title": "String Concatenation",
+    "difficulty": "Beginner",
+    "category": "Syntax",
+    "description": "Create two variables: 'first_name' with value 'John' and 'last_name' with value 'Doe'. Combine them with a space in between and print the full name.",
+    "starter_code": "first_name = 'John'\nlast_name = 'Doe'\n\n# Combine and print the full name\n",
+    "hints": [
+      "Use + to concatenate strings",
+      "Don't forget to add a space between names",
+      "You can add a space string: ' '"
+    ],
+    "solution": "first_name = 'John'\nlast_name = 'Doe'\n\nfull_name = first_name + ' ' + last_name\nprint(full_name)",
+    "expected_output": "John Doe\n"
+  },
+  {
+    "id": "syntax_005",
+    "title": "F-Strings",
+    "difficulty": "Beginner",
+    "category": "Syntax",
+    "description": "Using f-strings (formatted string literals), create a message that says 'My name is [name] and I am [age] years old.' where name='Emma' and age=30.",
+    "starter_code": "name = 'Emma'\nage = 30\n\n# Create and print the message using an f-string\n",
+    "hints": [
+      "F-strings start with f before the quotes: f'...'",
+      "Variables go inside curly braces: {variable}",
+      "Example: f'Hello, {name}!'"
+    ],
+    "solution": "name = 'Emma'\nage = 30\n\nmessage = f'My name is {name} and I am {age} years old.'\nprint(message)",
+    "expected_output": "My name is Emma and I am 30 years old.\n"
+  },
+  {
+    "id": "control_001",
+    "title": "Simple If Statement",
+    "difficulty": "Beginner",
+    "category": "Control Flow",
+    "description": "Write a program that checks if a number is positive. If the number (stored in variable 'num') is greater than 0, print 'Positive'. Use num = 5.",
+    "starter_code": "num = 5\n\n# Check if num is positive\n",
+    "hints": [
+      "Use 'if' followed by a condition and a colon",
+      "The condition for greater than is: >",
+      "Don't forget to indent the code inside the if block"
+    ],
+    "solution": "num = 5\n\nif num > 0:\n    print('Positive')",
+    "expected_output": "Positive\n"
+  },
+  {
+    "id": "control_002",
+    "title": "If-Else Statement",
+    "difficulty": "Beginner",
+    "category": "Control Flow",
+    "description": "Write a program that checks if a number is even or odd. If even, print 'Even', otherwise print 'Odd'. Use num = 7.",
+    "starter_code": "num = 7\n\n# Check if even or odd\n",
+    "hints": [
+      "Use the modulo operator % to get the remainder",
+      "A number is even if num % 2 equals 0",
+      "Use else: for the alternative case"
+    ],
+    "solution": "num = 7\n\nif num % 2 == 0:\n    print('Even')\nelse:\n    print('Odd')",
+    "expected_output": "Odd\n"
+  },
+  {
+    "id": "control_003",
+    "title": "If-Elif-Else Chain",
+    "difficulty": "Beginner",
+    "category": "Control Flow",
+    "description": "Write a program that grades a score. Given score = 85:\n- 90 and above: 'A'\n- 80-89: 'B'\n- 70-79: 'C'\n- Below 70: 'F'\n\nPrint the grade.",
+    "starter_code": "score = 85\n\n# Determine and print the grade\n",
+    "hints": [
+      "Use if for the first condition, elif for additional conditions",
+      "Check from highest to lowest grade",
+      "Use >= for 'greater than or equal to'"
+    ],
+    "solution": "score = 85\n\nif score >= 90:\n    print('A')\nelif score >= 80:\n    print('B')\nelif score >= 70:\n    print('C')\nelse:\n    print('F')",
+    "expected_output": "B\n"
+  },
+  {
+    "id": "control_004",
+    "title": "For Loop - Range",
+    "difficulty": "Beginner",
+    "category": "Control Flow",
+    "description": "Use a for loop to print numbers from 1 to 5 (inclusive), each on a new line.",
+    "starter_code": "# Use a for loop to print 1 to 5\n",
+    "hints": [
+      "Use range(start, stop) - note that stop is exclusive",
+      "range(1, 6) gives numbers 1, 2, 3, 4, 5",
+      "Syntax: for i in range(...):"
+    ],
+    "solution": "for i in range(1, 6):\n    print(i)",
+    "expected_output": "1\n2\n3\n4\n5\n"
+  },
+  {
+    "id": "control_005",
+    "title": "For Loop - Sum",
+    "difficulty": "Beginner",
+    "category": "Control Flow",
+    "description": "Calculate the sum of numbers from 1 to 10 using a for loop. Print the final sum.",
+    "starter_code": "# Calculate sum of 1 to 10\ntotal = 0\n\n# Your loop here\n\nprint(total)",
+    "hints": [
+      "Initialize a variable to store the sum (already done: total = 0)",
+      "In each iteration, add the current number to total",
+      "Use: total = total + i  or  total += i"
+    ],
+    "solution": "total = 0\n\nfor i in range(1, 11):\n    total += i\n\nprint(total)",
+    "expected_output": "55\n"
+  },
+  {
+    "id": "control_006",
+    "title": "While Loop",
+    "difficulty": "Beginner",
+    "category": "Control Flow",
+    "description": "Use a while loop to print numbers from 5 down to 1 (countdown). Each number on a new line.",
+    "starter_code": "# Countdown from 5 to 1\ncount = 5\n\n# Your while loop here\n",
+    "hints": [
+      "Continue while count is greater than 0",
+      "Print the current count inside the loop",
+      "Don't forget to decrease count (count -= 1) to avoid infinite loop!"
+    ],
+    "solution": "count = 5\n\nwhile count > 0:\n    print(count)\n    count -= 1",
+    "expected_output": "5\n4\n3\n2\n1\n"
+  },
+  {
+    "id": "control_007",
+    "title": "Nested Loops",
+    "difficulty": "Intermediate",
+    "category": "Control Flow",
+    "description": "Print a 3x3 multiplication table. Each row should show: '1x1=1 1x2=2 1x3=3' etc.\nUse nested for loops.",
+    "starter_code": "# Print 3x3 multiplication table\n",
+    "hints": [
+      "Use two for loops: outer for rows, inner for columns",
+      "Use print(..., end=' ') to print without newline",
+      "After inner loop completes, print() to move to next line"
+    ],
+    "solution": "for i in range(1, 4):\n    for j in range(1, 4):\n        print(f'{i}x{j}={i*j}', end=' ')\n    print()",
+    "expected_output": "1x1=1 1x2=2 1x3=3 \n2x1=2 2x2=4 2x3=6 \n3x1=3 3x2=6 3x3=9 \n"
+  },
+  {
+    "id": "func_001",
+    "title": "Simple Function",
+    "difficulty": "Beginner",
+    "category": "Functions",
+    "description": "Create a function called 'greet' that takes no parameters and prints 'Hello!'. Then call the function.",
+    "starter_code": "# Define your function here\n\n# Call the function\n",
+    "hints": [
+      "Use 'def' keyword to define a function",
+      "Syntax: def function_name():",
+      "Call the function by using its name followed by parentheses"
+    ],
+    "solution": "def greet():\n    print('Hello!')\n\ngreet()",
+    "expected_output": "Hello!\n"
+  },
+  {
+    "id": "func_002",
+    "title": "Function with Parameters",
+    "difficulty": "Beginner",
+    "category": "Functions",
+    "description": "Create a function called 'greet_person' that takes a name as parameter and prints 'Hello, [name]!'. Call it with 'Alice'.",
+    "starter_code": "# Define your function\n\n# Call with 'Alice'\n",
+    "hints": [
+      "Parameters go inside the parentheses: def func(param):",
+      "Use the parameter inside the function like a variable",
+      "Call with: greet_person('Alice')"
+    ],
+    "solution": "def greet_person(name):\n    print(f'Hello, {name}!')\n\ngreet_person('Alice')",
+    "expected_output": "Hello, Alice!\n"
+  },
+  {
+    "id": "func_003",
+    "title": "Function with Return Value",
+    "difficulty": "Beginner",
+    "category": "Functions",
+    "description": "Create a function called 'add' that takes two numbers and returns their sum. Call it with 5 and 3, and print the result.",
+    "starter_code": "# Define the add function\n\n# Call and print the result\n",
+    "hints": [
+      "Use 'return' to send a value back from the function",
+      "The function should accept two parameters",
+      "Store the returned value: result = add(5, 3)"
+    ],
+    "solution": "def add(a, b):\n    return a + b\n\nresult = add(5, 3)\nprint(result)",
+    "expected_output": "8\n"
+  },
+  {
+    "id": "func_004",
+    "title": "Default Parameters",
+    "difficulty": "Intermediate",
+    "category": "Functions",
+    "description": "Create a function 'power' that calculates x raised to the power of n. The default value of n should be 2 (square). Test with power(3) and power(2, 4).",
+    "starter_code": "# Define power function with default parameter\n\n# Test cases\n",
+    "hints": [
+      "Default parameters: def func(x, n=2):",
+      "Use ** for exponentiation: x ** n",
+      "power(3) should use default n=2, power(2, 4) uses n=4"
+    ],
+    "solution": "def power(x, n=2):\n    return x ** n\n\nprint(power(3))\nprint(power(2, 4))",
+    "expected_output": "9\n16\n"
+  },
+  {
+    "id": "func_005",
+    "title": "Multiple Return Values",
+    "difficulty": "Intermediate",
+    "category": "Functions",
+    "description": "Create a function 'min_max' that takes a list of numbers and returns both the minimum and maximum values. Test with [3, 1, 4, 1, 5, 9, 2, 6].",
+    "starter_code": "# Define min_max function\n\n# Test with the list\nnumbers = [3, 1, 4, 1, 5, 9, 2, 6]\n",
+    "hints": [
+      "Return multiple values: return min_val, max_val",
+      "Use min() and max() built-in functions",
+      "Unpack returned values: minimum, maximum = min_max(numbers)"
+    ],
+    "solution": "def min_max(numbers):\n    return min(numbers), max(numbers)\n\nnumbers = [3, 1, 4, 1, 5, 9, 2, 6]\nminimum, maximum = min_max(numbers)\nprint(f'Min: {minimum}, Max: {maximum}')",
+    "expected_output": "Min: 1, Max: 9\n"
+  },
+  {
+    "id": "func_006",
+    "title": "Recursive Function",
+    "difficulty": "Intermediate",
+    "category": "Functions",
+    "description": "Create a recursive function 'factorial' that calculates n!. Remember: 0! = 1, n! = n * (n-1)!. Test with factorial(5).",
+    "starter_code": "# Define factorial function using recursion\n\n# Test\n",
+    "hints": [
+      "A recursive function calls itself",
+      "Base case: if n <= 1, return 1",
+      "Recursive case: return n * factorial(n - 1)"
+    ],
+    "solution": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(5))",
+    "expected_output": "120\n"
+  },
+  {
+    "id": "data_001",
+    "title": "Create a List",
+    "difficulty": "Beginner",
+    "category": "Data Structures",
+    "description": "Create a list called 'fruits' containing: 'apple', 'banana', 'cherry'. Print the list and print the second item.",
+    "starter_code": "# Create the fruits list\n\n# Print the list and the second item\n",
+    "hints": [
+      "Lists are created with square brackets: [item1, item2, ...]",
+      "Items are separated by commas",
+      "Access items by index (0-based): fruits[1] for second item"
+    ],
+    "solution": "fruits = ['apple', 'banana', 'cherry']\nprint(fruits)\nprint(fruits[1])",
+    "expected_output": "['apple', 'banana', 'cherry']\nbanana\n"
+  },
+  {
+    "id": "data_002",
+    "title": "List Operations",
+    "difficulty": "Beginner",
+    "category": "Data Structures",
+    "description": "Start with numbers = [1, 2, 3]. Add 4 to the end, insert 0 at the beginning, and remove 2. Print the final list.",
+    "starter_code": "numbers = [1, 2, 3]\n\n# Perform operations\n\n# Print final list\n",
+    "hints": [
+      "Use .append(item) to add to the end",
+      "Use .insert(index, item) to insert at position",
+      "Use .remove(item) to remove by value"
+    ],
+    "solution": "numbers = [1, 2, 3]\n\nnumbers.append(4)\nnumbers.insert(0, 0)\nnumbers.remove(2)\n\nprint(numbers)",
+    "expected_output": "[0, 1, 3, 4]\n"
+  },
+  {
+    "id": "data_003",
+    "title": "List Slicing",
+    "difficulty": "Beginner",
+    "category": "Data Structures",
+    "description": "Given numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], print:\n1. First 3 elements\n2. Last 3 elements\n3. Elements from index 2 to 5\n4. Every second element",
+    "starter_code": "numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n\n# Print the slices\n",
+    "hints": [
+      "Slice syntax: list[start:end:step]",
+      "First 3: numbers[:3], Last 3: numbers[-3:]",
+      "Every second: numbers[::2]"
+    ],
+    "solution": "numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n\nprint(numbers[:3])\nprint(numbers[-3:])\nprint(numbers[2:6])\nprint(numbers[::2])",
+    "expected_output": "[0, 1, 2]\n[7, 8, 9]\n[2, 3, 4, 5]\n[0, 2, 4, 6, 8]\n"
+  },
+  {
+    "id": "data_004",
+    "title": "Dictionary Basics",
+    "difficulty": "Beginner",
+    "category": "Data Structures",
+    "description": "Create a dictionary 'person' with keys: 'name' (value: 'John'), 'age' (value: 30), 'city' (value: 'New York'). Print the dictionary and access the 'name' value.",
+    "starter_code": "# Create the person dictionary\n\n# Print dictionary and name\n",
+    "hints": [
+      "Dictionaries use curly braces: {'key': 'value'}",
+      "Key-value pairs are separated by colons",
+      "Access values: dictionary['key']"
+    ],
+    "solution": "person = {'name': 'John', 'age': 30, 'city': 'New York'}\n\nprint(person)\nprint(person['name'])",
+    "expected_output": "{'name': 'John', 'age': 30, 'city': 'New York'}\nJohn\n"
+  },
+  {
+    "id": "data_005",
+    "title": "Dictionary Operations",
+    "difficulty": "Beginner",
+    "category": "Data Structures",
+    "description": "Given person = {'name': 'John', 'age': 30}:\n1. Add key 'email' with value 'john@example.com'\n2. Update 'age' to 31\n3. Print all keys and all values separately",
+    "starter_code": "person = {'name': 'John', 'age': 30}\n\n# Perform operations\n\n# Print keys and values\n",
+    "hints": [
+      "Add/update: dictionary['key'] = value",
+      "Get all keys: dictionary.keys()",
+      "Get all values: dictionary.values()"
+    ],
+    "solution": "person = {'name': 'John', 'age': 30}\n\nperson['email'] = 'john@example.com'\nperson['age'] = 31\n\nprint(list(person.keys()))\nprint(list(person.values()))",
+    "expected_output": "['name', 'age', 'email']\n['John', 31, 'john@example.com']\n"
+  },
+  {
+    "id": "data_006",
+    "title": "Tuple Basics",
+    "difficulty": "Beginner",
+    "category": "Data Structures",
+    "description": "Create a tuple 'coordinates' with values (10, 20, 30). Print the tuple, access the second element, and try to understand why tuples are immutable by printing the length.",
+    "starter_code": "# Create the coordinates tuple\n\n# Print tuple, second element, and length\n",
+    "hints": [
+      "Tuples use parentheses: (item1, item2, ...)",
+      "Access elements like lists: tuple[index]",
+      "Use len() to get the length"
+    ],
+    "solution": "coordinates = (10, 20, 30)\n\nprint(coordinates)\nprint(coordinates[1])\nprint(len(coordinates))",
+    "expected_output": "(10, 20, 30)\n20\n3\n"
+  },
+  {
+    "id": "data_007",
+    "title": "Set Operations",
+    "difficulty": "Intermediate",
+    "category": "Data Structures",
+    "description": "Create two sets: set_a = {1, 2, 3, 4} and set_b = {3, 4, 5, 6}. Print their union, intersection, and difference (set_a - set_b).",
+    "starter_code": "set_a = {1, 2, 3, 4}\nset_b = {3, 4, 5, 6}\n\n# Print union, intersection, and difference\n",
+    "hints": [
+      "Union: set_a | set_b or set_a.union(set_b)",
+      "Intersection: set_a & set_b or set_a.intersection(set_b)",
+      "Difference: set_a - set_b or set_a.difference(set_b)"
+    ],
+    "solution": "set_a = {1, 2, 3, 4}\nset_b = {3, 4, 5, 6}\n\nprint(set_a | set_b)\nprint(set_a & set_b)\nprint(set_a - set_b)",
+    "expected_output": "{1, 2, 3, 4, 5, 6}\n{3, 4}\n{1, 2}\n"
+  },
+  {
+    "id": "data_008",
+    "title": "List Iteration",
+    "difficulty": "Beginner",
+    "category": "Data Structures",
+    "description": "Given colors = ['red', 'green', 'blue'], iterate through and print each color with its index like: '0: red', '1: green', '2: blue'.",
+    "starter_code": "colors = ['red', 'green', 'blue']\n\n# Iterate and print with index\n",
+    "hints": [
+      "Use enumerate() to get both index and value",
+      "Syntax: for index, value in enumerate(list):",
+      "Use f-string to format output"
+    ],
+    "solution": "colors = ['red', 'green', 'blue']\n\nfor index, color in enumerate(colors):\n    print(f'{index}: {color}')",
+    "expected_output": "0: red\n1: green\n2: blue\n"
+  },
+  {
+    "id": "handling_001",
+    "title": "Read File Content",
+    "difficulty": "Intermediate",
+    "category": "Data Handling",
+    "description": "Write code to create a file 'test.txt' with the text 'Hello, Python!' and then read and print its contents.",
+    "starter_code": "# Create the file and write to it\n\n# Read and print contents\n",
+    "hints": [
+      "Use open() with 'w' mode to write",
+      "Use open() with 'r' mode to read",
+      "Use 'with' statement for safe file handling"
+    ],
+    "solution": "with open('test.txt', 'w') as f:\n    f.write('Hello, Python!')\n\nwith open('test.txt', 'r') as f:\n    content = f.read()\n    print(content)",
+    "expected_output": "Hello, Python!\n"
+  },
+  {
+    "id": "handling_002",
+    "title": "Process CSV Data",
+    "difficulty": "Intermediate",
+    "category": "Data Handling",
+    "description": "Given a CSV-like string data, split it and calculate the average of the numbers.\ndata = '10,20,30,40,50'",
+    "starter_code": "data = '10,20,30,40,50'\n\n# Split, convert to numbers, and calculate average\n",
+    "hints": [
+      "Use .split(',') to split the string",
+      "Convert each string to int using int() or list comprehension",
+      "Average = sum / count"
+    ],
+    "solution": "data = '10,20,30,40,50'\n\nnumbers = [int(x) for x in data.split(',')]\naverage = sum(numbers) / len(numbers)\nprint(average)",
+    "expected_output": "30.0\n"
+  },
+  {
+    "id": "handling_003",
+    "title": "JSON Handling",
+    "difficulty": "Intermediate",
+    "category": "Data Handling",
+    "description": "Convert a dictionary to JSON string and back. Start with: data = {'name': 'Alice', 'scores': [95, 87, 92]}. Print the JSON string and the converted-back dictionary.",
+    "starter_code": "import json\n\ndata = {'name': 'Alice', 'scores': [95, 87, 92]}\n\n# Convert to JSON string and back\n",
+    "hints": [
+      "Use json.dumps() to convert dict to JSON string",
+      "Use json.loads() to convert JSON string to dict",
+      "Import json at the top"
+    ],
+    "solution": "import json\n\ndata = {'name': 'Alice', 'scores': [95, 87, 92]}\n\njson_string = json.dumps(data)\nprint(json_string)\n\nloaded_data = json.loads(json_string)\nprint(loaded_data)",
+    "expected_output": "{\"name\": \"Alice\", \"scores\": [95, 87, 92]}\n{'name': 'Alice', 'scores': [95, 87, 92]}\n"
+  },
+  {
+    "id": "handling_004",
+    "title": "String Parsing",
+    "difficulty": "Intermediate",
+    "category": "Data Handling",
+    "description": "Given the string 'Name: John Doe, Age: 30, City: New York', extract and print each value (John Doe, 30, New York) separately.",
+    "starter_code": "text = 'Name: John Doe, Age: 30, City: New York'\n\n# Parse and print each value\n",
+    "hints": [
+      "First split by ', ' to get each field",
+      "Then split each field by ': ' to get the value",
+      "Use index [1] to get the value after the colon"
+    ],
+    "solution": "text = 'Name: John Doe, Age: 30, City: New York'\n\nfields = text.split(', ')\nfor field in fields:\n    value = field.split(': ')[1]\n    print(value)",
+    "expected_output": "John Doe\n30\nNew York\n"
+  },
+  {
+    "id": "except_001",
+    "title": "Basic Try-Except",
+    "difficulty": "Intermediate",
+    "category": "Exception Handling",
+    "description": "Write code that tries to convert 'hello' to an integer. Catch the error and print 'Invalid number format'.",
+    "starter_code": "text = 'hello'\n\n# Try to convert and handle the error\n",
+    "hints": [
+      "Use try: to wrap the risky code",
+      "Use except: to handle the error",
+      "ValueError is raised when conversion fails"
+    ],
+    "solution": "text = 'hello'\n\ntry:\n    number = int(text)\nexcept ValueError:\n    print('Invalid number format')",
+    "expected_output": "Invalid number format\n"
+  },
+  {
+    "id": "except_002",
+    "title": "Multiple Exceptions",
+    "difficulty": "Intermediate",
+    "category": "Exception Handling",
+    "description": "Write a function 'safe_divide' that takes two parameters and returns their division. Handle ZeroDivisionError and TypeError. Test with (10, 2), (10, 0), and (10, 'a').",
+    "starter_code": "# Define safe_divide function\n\n# Test cases\n",
+    "hints": [
+      "Use multiple except blocks for different errors",
+      "ZeroDivisionError: division by zero",
+      "TypeError: wrong type for operation"
+    ],
+    "solution": "def safe_divide(a, b):\n    try:\n        return a / b\n    except ZeroDivisionError:\n        return 'Error: Division by zero'\n    except TypeError:\n        return 'Error: Invalid type'\n\nprint(safe_divide(10, 2))\nprint(safe_divide(10, 0))\nprint(safe_divide(10, 'a'))",
+    "expected_output": "5.0\nError: Division by zero\nError: Invalid type\n"
+  },
+  {
+    "id": "except_003",
+    "title": "Try-Except-Finally",
+    "difficulty": "Intermediate",
+    "category": "Exception Handling",
+    "description": "Write code that tries to open a non-existent file. Handle the FileNotFoundError, and use finally to print 'Operation complete' regardless of the outcome.",
+    "starter_code": "# Try to open non-existent file with error handling\n",
+    "hints": [
+      "try: contains the risky operation",
+      "except FileNotFoundError: handles missing file",
+      "finally: always executes"
+    ],
+    "solution": "try:\n    with open('nonexistent.txt', 'r') as f:\n        content = f.read()\nexcept FileNotFoundError:\n    print('File not found')\nfinally:\n    print('Operation complete')",
+    "expected_output": "File not found\nOperation complete\n"
+  },
+  {
+    "id": "except_004",
+    "title": "Raise Exception",
+    "difficulty": "Intermediate",
+    "category": "Exception Handling",
+    "description": "Write a function 'validate_age' that raises a ValueError if age is negative. Test with ages 25 and -5 (wrap in try-except).",
+    "starter_code": "# Define validate_age function\n\n# Test with try-except\n",
+    "hints": [
+      "Use 'raise' to throw an exception",
+      "Syntax: raise ValueError('message')",
+      "Check if age < 0 before raising"
+    ],
+    "solution": "def validate_age(age):\n    if age < 0:\n        raise ValueError('Age cannot be negative')\n    return f'Valid age: {age}'\n\ntry:\n    print(validate_age(25))\n    print(validate_age(-5))\nexcept ValueError as e:\n    print(f'Error: {e}')",
+    "expected_output": "Valid age: 25\nError: Age cannot be negative\n"
+  },
+  {
+    "id": "adv_001",
+    "title": "List Comprehension",
+    "difficulty": "Intermediate",
+    "category": "Advanced",
+    "description": "Create a list of squares from 1 to 10 using list comprehension. Then create another list containing only the even squares.",
+    "starter_code": "# Create squares using list comprehension\n\n# Create even squares\n",
+    "hints": [
+      "Basic syntax: [expression for item in iterable]",
+      "With condition: [expression for item in iterable if condition]",
+      "A square is even if it's divisible by 2"
+    ],
+    "solution": "squares = [x**2 for x in range(1, 11)]\nprint(squares)\n\neven_squares = [x for x in squares if x % 2 == 0]\nprint(even_squares)",
+    "expected_output": "[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]\n[4, 16, 36, 64, 100]\n"
+  },
+  {
+    "id": "adv_002",
+    "title": "Dictionary Comprehension",
+    "difficulty": "Intermediate",
+    "category": "Advanced",
+    "description": "Create a dictionary mapping numbers 1-5 to their cubes using dictionary comprehension.",
+    "starter_code": "# Create cubes dictionary\n",
+    "hints": [
+      "Syntax: {key: value for item in iterable}",
+      "Key is the number, value is its cube",
+      "Cube: x**3"
+    ],
+    "solution": "cubes = {x: x**3 for x in range(1, 6)}\nprint(cubes)",
+    "expected_output": "{1: 1, 2: 8, 3: 27, 4: 64, 5: 125}\n"
+  },
+  {
+    "id": "adv_003",
+    "title": "Lambda Functions",
+    "difficulty": "Intermediate",
+    "category": "Advanced",
+    "description": "Create a lambda function that takes a number and returns its square. Use it to square 7. Also use map() with the lambda to square all numbers in [1, 2, 3, 4, 5].",
+    "starter_code": "# Create lambda function\n\n# Use with map()\n",
+    "hints": [
+      "Lambda syntax: lambda x: expression",
+      "map() applies a function to each item",
+      "Convert map result to list to print"
+    ],
+    "solution": "square = lambda x: x ** 2\nprint(square(7))\n\nnumbers = [1, 2, 3, 4, 5]\nsquared = list(map(square, numbers))\nprint(squared)",
+    "expected_output": "49\n[1, 4, 9, 16, 25]\n"
+  },
+  {
+    "id": "adv_004",
+    "title": "Generator Function",
+    "difficulty": "Advanced",
+    "category": "Advanced",
+    "description": "Create a generator function 'countdown' that yields numbers from n down to 1. Use it to count down from 5.",
+    "starter_code": "# Define countdown generator\n\n# Use the generator\n",
+    "hints": [
+      "Use 'yield' instead of 'return' in generators",
+      "Generators produce values one at a time",
+      "Iterate with a for loop"
+    ],
+    "solution": "def countdown(n):\n    while n > 0:\n        yield n\n        n -= 1\n\nfor num in countdown(5):\n    print(num)",
+    "expected_output": "5\n4\n3\n2\n1\n"
+  },
+  {
+    "id": "adv_005",
+    "title": "Decorator Basics",
+    "difficulty": "Advanced",
+    "category": "Advanced",
+    "description": "Create a decorator 'shout' that converts the return value of a function to uppercase. Apply it to a function that returns 'hello world'.",
+    "starter_code": "# Define the shout decorator\n\n# Apply to a function\n",
+    "hints": [
+      "A decorator is a function that wraps another function",
+      "Use @decorator_name above the function",
+      "The wrapper calls the original and modifies its result"
+    ],
+    "solution": "def shout(func):\n    def wrapper():\n        result = func()\n        return result.upper()\n    return wrapper\n\n@shout\ndef greet():\n    return 'hello world'\n\nprint(greet())",
+    "expected_output": "HELLO WORLD\n"
+  },
+  {
+    "id": "adv_006",
+    "title": "Class Definition",
+    "difficulty": "Advanced",
+    "category": "Advanced",
+    "description": "Create a class 'Rectangle' with width and height attributes. Add a method 'area' that returns the area. Create a rectangle with width=5 and height=3, print its area.",
+    "starter_code": "# Define Rectangle class\n\n# Create instance and print area\n",
+    "hints": [
+      "Use __init__ to initialize attributes",
+      "self refers to the instance",
+      "Area = width * height"
+    ],
+    "solution": "class Rectangle:\n    def __init__(self, width, height):\n        self.width = width\n        self.height = height\n    \n    def area(self):\n        return self.width * self.height\n\nrect = Rectangle(5, 3)\nprint(rect.area())",
+    "expected_output": "15\n"
+  },
+  {
+    "id": "adv_007",
+    "title": "Inheritance",
+    "difficulty": "Advanced",
+    "category": "Advanced",
+    "description": "Create a class 'Animal' with a method 'speak' that prints 'Some sound'. Create a subclass 'Dog' that overrides 'speak' to print 'Woof!'. Create a Dog and call speak().",
+    "starter_code": "# Define Animal class\n\n# Define Dog subclass\n\n# Create and test\n",
+    "hints": [
+      "Subclass syntax: class Child(Parent):",
+      "Override by defining the same method in the child",
+      "The child method replaces the parent method"
+    ],
+    "solution": "class Animal:\n    def speak(self):\n        print('Some sound')\n\nclass Dog(Animal):\n    def speak(self):\n        print('Woof!')\n\ndog = Dog()\ndog.speak()",
+    "expected_output": "Woof!\n"
+  },
+  {
+    "id": "adv_008",
+    "title": "Filter and Reduce",
+    "difficulty": "Advanced",
+    "category": "Advanced",
+    "description": "Given numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:\n1. Use filter() to get only odd numbers\n2. Use reduce() to calculate the product of odd numbers",
+    "starter_code": "from functools import reduce\n\nnumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\n\n# Filter odd numbers\n\n# Calculate product with reduce\n",
+    "hints": [
+      "filter(function, iterable) - function returns True/False",
+      "Odd numbers: n % 2 != 0",
+      "reduce(function, iterable) - function takes 2 args"
+    ],
+    "solution": "from functools import reduce\n\nnumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\n\nodd_numbers = list(filter(lambda x: x % 2 != 0, numbers))\nprint(odd_numbers)\n\nproduct = reduce(lambda x, y: x * y, odd_numbers)\nprint(product)",
+    "expected_output": "[1, 3, 5, 7, 9]\n945\n"
+  },
+  {
+    "id": "control_008",
+    "title": "FizzBuzz",
+    "difficulty": "Intermediate",
+    "category": "Control Flow",
+    "description": "Classic FizzBuzz: Print numbers 1 to 15. For multiples of 3, print 'Fizz'. For multiples of 5, print 'Buzz'. For multiples of both, print 'FizzBuzz'.",
+    "starter_code": "# Implement FizzBuzz for numbers 1-15\n",
+    "hints": [
+      "Check multiples of both 3 AND 5 first (15, etc.)",
+      "Use % operator to check divisibility",
+      "Order matters: check 3 and 5 before checking just 3 or just 5"
+    ],
+    "solution": "for i in range(1, 16):\n    if i % 3 == 0 and i % 5 == 0:\n        print('FizzBuzz')\n    elif i % 3 == 0:\n        print('Fizz')\n    elif i % 5 == 0:\n        print('Buzz')\n    else:\n        print(i)",
+    "expected_output": "1\n2\nFizz\n4\nBuzz\nFizz\n7\n8\nFizz\nBuzz\n11\nFizz\n13\n14\nFizzBuzz\n"
+  },
+  {
+    "id": "func_007",
+    "title": "Args and Kwargs",
+    "difficulty": "Advanced",
+    "category": "Functions",
+    "description": "Create a function 'describe_pet' that accepts *args for pet names and **kwargs for attributes. Print each pet name and any attributes passed.",
+    "starter_code": "# Define describe_pet with *args and **kwargs\n\n# Test with multiple pets and attributes\n",
+    "hints": [
+      "*args collects positional arguments as a tuple",
+      "**kwargs collects keyword arguments as a dictionary",
+      "Iterate over args and kwargs.items()"
+    ],
+    "solution": "def describe_pet(*args, **kwargs):\n    print('Pets:', args)\n    for key, value in kwargs.items():\n        print(f'{key}: {value}')\n\ndescribe_pet('Max', 'Bella', species='dog', age=3)",
+    "expected_output": "Pets: ('Max', 'Bella')\nspecies: dog\nage: 3\n"
+  },
+  {
+    "id": "data_009",
+    "title": "Nested Dictionaries",
+    "difficulty": "Intermediate",
+    "category": "Data Structures",
+    "description": "Create a nested dictionary 'school' with two students. Each student has 'name' and 'grades' (a list). Print the second grade of the first student.",
+    "starter_code": "# Create nested school dictionary\n\n# Access second grade of first student\n",
+    "hints": [
+      "Nested: {'student1': {'name': ..., 'grades': [...]}}",
+      "Access nested values: dict['key1']['key2']",
+      "Lists use index: [1] for second element"
+    ],
+    "solution": "school = {\n    'student1': {'name': 'Alice', 'grades': [90, 85, 88]},\n    'student2': {'name': 'Bob', 'grades': [78, 82, 80]}\n}\n\nprint(school['student1']['grades'][1])",
+    "expected_output": "85\n"
+  },
+  {
+    "id": "syntax_006",
+    "title": "Type Conversion",
+    "difficulty": "Beginner",
+    "category": "Syntax",
+    "description": "Convert between types:\n1. Convert string '42' to integer\n2. Convert integer 100 to string\n3. Convert string '3.14' to float\n4. Convert float 2.7 to integer\n\nPrint each result with its type.",
+    "starter_code": "# Perform conversions and print with type\n",
+    "hints": [
+      "Use int(), str(), float() for conversions",
+      "type() returns the type of a value",
+      "Converting float to int truncates (removes decimal)"
+    ],
+    "solution": "a = int('42')\nprint(a, type(a))\n\nb = str(100)\nprint(b, type(b))\n\nc = float('3.14')\nprint(c, type(c))\n\nd = int(2.7)\nprint(d, type(d))",
+    "expected_output": "42 <class 'int'>\n100 <class 'str'>\n3.14 <class 'float'>\n2 <class 'int'>\n"
+  },
+  {
+    "id": "syntax_007",
+    "title": "String Methods",
+    "difficulty": "Beginner",
+    "category": "Syntax",
+    "description": "Given text = '  Hello, World!  ', apply these string methods and print results:\n1. Strip whitespace\n2. Convert to lowercase\n3. Replace 'World' with 'Python'\n4. Check if it starts with 'Hello'",
+    "starter_code": "text = '  Hello, World!  '\n\n# Apply string methods\n",
+    "hints": [
+      ".strip() removes leading/trailing whitespace",
+      ".lower() converts to lowercase",
+      ".replace(old, new) replaces text",
+      ".startswith() returns True/False"
+    ],
+    "solution": "text = '  Hello, World!  '\n\nprint(text.strip())\nprint(text.lower())\nprint(text.replace('World', 'Python'))\nprint(text.strip().startswith('Hello'))",
+    "expected_output": "Hello, World!\n  hello, world!  \n  Hello, Python!  \nTrue\n"
+  },
+  {
+    "id": "control_009",
+    "title": "Break and Continue",
+    "difficulty": "Intermediate",
+    "category": "Control Flow",
+    "description": "1. Use 'break' to stop a loop when you find the number 5 in range(1, 10)\n2. Use 'continue' to skip even numbers and print only odd numbers from 1 to 10",
+    "starter_code": "# Part 1: break when finding 5\n\n# Part 2: continue to skip even numbers\n",
+    "hints": [
+      "break immediately exits the loop",
+      "continue skips to the next iteration",
+      "Both are used inside the loop body"
+    ],
+    "solution": "# Part 1\nfor i in range(1, 10):\n    if i == 5:\n        print('Found 5!')\n        break\n    print(i)\n\nprint('---')\n\n# Part 2\nfor i in range(1, 11):\n    if i % 2 == 0:\n        continue\n    print(i)",
+    "expected_output": "1\n2\n3\n4\nFound 5!\n---\n1\n3\n5\n7\n9\n"
+  },
+  {
+    "id": "adv_009",
+    "title": "Context Manager",
+    "difficulty": "Advanced",
+    "category": "Advanced",
+    "description": "Create a simple context manager class 'Timer' that prints 'Starting...' when entering and 'Finished!' when exiting. Use the 'with' statement to test it.",
+    "starter_code": "# Define Timer context manager class\n\n# Use with statement\n",
+    "hints": [
+      "Implement __enter__ and __exit__ methods",
+      "__enter__ runs when entering 'with' block",
+      "__exit__ runs when exiting (takes self, exc_type, exc_val, exc_tb)"
+    ],
+    "solution": "class Timer:\n    def __enter__(self):\n        print('Starting...')\n        return self\n    \n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print('Finished!')\n        return False\n\nwith Timer():\n    print('Doing some work')",
+    "expected_output": "Starting...\nDoing some work\nFinished!\n"
+  }
+]
+
