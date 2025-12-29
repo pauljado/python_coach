@@ -739,6 +739,1371 @@
     ],
     "solution": "class Timer:\n    def __enter__(self):\n        print('Starting...')\n        return self\n    \n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print('Finished!')\n        return False\n\nwith Timer():\n    print('Doing some work')",
     "expected_output": "Starting...\nDoing some work\nFinished!\n"
+  },
+  {
+    "id": "syntax_008",
+    "title": "Boolean Operations",
+    "difficulty": "Beginner",
+    "category": "Syntax",
+    "description": "Create variables: a = True, b = False. Print the results of: a and b, a or b, not a, not b.",
+    "starter_code": "a = True\nb = False\n\n# Print boolean operations\n",
+    "hints": [
+      "'and' returns True only if both are True",
+      "'or' returns True if at least one is True",
+      "'not' inverts the boolean value"
+    ],
+    "solution": "a = True\nb = False\n\nprint(a and b)\nprint(a or b)\nprint(not a)\nprint(not b)",
+    "expected_output": "False\nTrue\nFalse\nTrue\n"
+  },
+  {
+    "id": "syntax_009",
+    "title": "Multiple Assignment",
+    "difficulty": "Beginner",
+    "category": "Syntax",
+    "description": "Assign values 1, 2, 3 to variables x, y, z in a single line. Then swap x and y values in a single line. Print all three variables after each operation.",
+    "starter_code": "# Assign 1, 2, 3 to x, y, z\n\n# Print values\n\n# Swap x and y\n\n# Print values again\n",
+    "hints": [
+      "Multiple assignment: x, y, z = 1, 2, 3",
+      "Swap in Python: x, y = y, x",
+      "No temporary variable needed!"
+    ],
+    "solution": "x, y, z = 1, 2, 3\nprint(x, y, z)\n\nx, y = y, x\nprint(x, y, z)",
+    "expected_output": "1 2 3\n2 1 3\n"
+  },
+  {
+    "id": "syntax_010",
+    "title": "Input Length",
+    "difficulty": "Beginner",
+    "category": "Syntax",
+    "description": "Given the string message = 'Python is awesome!', print its length and print the first and last characters.",
+    "starter_code": "message = 'Python is awesome!'\n\n# Print length, first char, last char\n",
+    "hints": [
+      "Use len() to get string length",
+      "First character: string[0]",
+      "Last character: string[-1]"
+    ],
+    "solution": "message = 'Python is awesome!'\n\nprint(len(message))\nprint(message[0])\nprint(message[-1])",
+    "expected_output": "18\nP\n!\n"
+  },
+  {
+    "id": "syntax_011",
+    "title": "Escape Characters",
+    "difficulty": "Beginner",
+    "category": "Syntax",
+    "description": "Print a string that contains:\n1. A tab between 'Hello' and 'World'\n2. A newline between 'Line1' and 'Line2'\n3. A backslash character",
+    "starter_code": "# Print strings with escape characters\n",
+    "hints": [
+      "Tab: \\t",
+      "Newline: \\n",
+      "Backslash: \\\\"
+    ],
+    "solution": "print('Hello\\tWorld')\nprint('Line1\\nLine2')\nprint('This is a backslash: \\\\')",
+    "expected_output": "Hello\tWorld\nLine1\nLine2\nThis is a backslash: \\\n"
+  },
+  {
+    "id": "syntax_012",
+    "title": "Floor Division and Modulo",
+    "difficulty": "Beginner",
+    "category": "Syntax",
+    "description": "Given a = 17 and b = 5, calculate and print:\n1. Floor division (//)\n2. Modulo (%)\n3. Regular division (/)",
+    "starter_code": "a = 17\nb = 5\n\n# Calculate floor division, modulo, and regular division\n",
+    "hints": [
+      "Floor division // gives integer result",
+      "Modulo % gives remainder",
+      "Regular division / gives float result"
+    ],
+    "solution": "a = 17\nb = 5\n\nprint(a // b)\nprint(a % b)\nprint(a / b)",
+    "expected_output": "3\n2\n3.4\n"
+  },
+  {
+    "id": "syntax_013",
+    "title": "String Repetition",
+    "difficulty": "Beginner",
+    "category": "Syntax",
+    "description": "Create a line of 20 dashes using string repetition. Then print 'Python' repeated 3 times.",
+    "starter_code": "# Create line of dashes\n\n# Repeat 'Python'\n",
+    "hints": [
+      "Use * to repeat strings",
+      "Syntax: string * number",
+      "'abc' * 3 gives 'abcabcabc'"
+    ],
+    "solution": "print('-' * 20)\nprint('Python' * 3)",
+    "expected_output": "--------------------\nPythonPythonPython\n"
+  },
+  {
+    "id": "syntax_014",
+    "title": "Membership Operators",
+    "difficulty": "Beginner",
+    "category": "Syntax",
+    "description": "Given text = 'Hello, World!', check and print whether:\n1. 'World' is in text\n2. 'Python' is not in text\n3. 'H' is in text",
+    "starter_code": "text = 'Hello, World!'\n\n# Check membership\n",
+    "hints": [
+      "Use 'in' to check if substring exists",
+      "Use 'not in' to check if it doesn't exist",
+      "Returns True or False"
+    ],
+    "solution": "text = 'Hello, World!'\n\nprint('World' in text)\nprint('Python' not in text)\nprint('H' in text)",
+    "expected_output": "True\nTrue\nTrue\n"
+  },
+  {
+    "id": "syntax_015",
+    "title": "Augmented Assignment",
+    "difficulty": "Beginner",
+    "category": "Syntax",
+    "description": "Start with x = 10. Use augmented assignment operators to:\n1. Add 5 to x\n2. Multiply x by 2\n3. Subtract 10 from x\n4. Floor divide x by 3\nPrint x after each operation.",
+    "starter_code": "x = 10\n\n# Perform operations and print after each\n",
+    "hints": [
+      "+=, -=, *=, //= are augmented assignments",
+      "x += 5 is same as x = x + 5",
+      "Print after each operation"
+    ],
+    "solution": "x = 10\nx += 5\nprint(x)\nx *= 2\nprint(x)\nx -= 10\nprint(x)\nx //= 3\nprint(x)",
+    "expected_output": "15\n30\n20\n6\n"
+  },
+  {
+    "id": "control_010",
+    "title": "Range with Step",
+    "difficulty": "Beginner",
+    "category": "Control Flow",
+    "description": "Use range with a step to print:\n1. Even numbers from 0 to 10\n2. Numbers counting down from 10 to 1",
+    "starter_code": "# Print even numbers 0-10\n\n# Print countdown 10-1\n",
+    "hints": [
+      "range(start, stop, step)",
+      "For evens: range(0, 11, 2)",
+      "For countdown: use negative step"
+    ],
+    "solution": "for i in range(0, 11, 2):\n    print(i)\n\nprint('---')\n\nfor i in range(10, 0, -1):\n    print(i)",
+    "expected_output": "0\n2\n4\n6\n8\n10\n---\n10\n9\n8\n7\n6\n5\n4\n3\n2\n1\n"
+  },
+  {
+    "id": "control_011",
+    "title": "Prime Number Check",
+    "difficulty": "Intermediate",
+    "category": "Control Flow",
+    "description": "Write code to check if num = 17 is a prime number. Print 'Prime' if it is, 'Not prime' otherwise.",
+    "starter_code": "num = 17\n\n# Check if prime\n",
+    "hints": [
+      "A prime has no divisors other than 1 and itself",
+      "Check divisibility from 2 to sqrt(num)",
+      "Use a flag or break statement"
+    ],
+    "solution": "num = 17\nis_prime = True\n\nif num < 2:\n    is_prime = False\nelse:\n    for i in range(2, int(num**0.5) + 1):\n        if num % i == 0:\n            is_prime = False\n            break\n\nprint('Prime' if is_prime else 'Not prime')",
+    "expected_output": "Prime\n"
+  },
+  {
+    "id": "control_012",
+    "title": "Pattern Printing",
+    "difficulty": "Intermediate",
+    "category": "Control Flow",
+    "description": "Print a right triangle pattern with 5 rows using asterisks:\n*\n**\n***\n****\n*****",
+    "starter_code": "# Print triangle pattern\n",
+    "hints": [
+      "Use nested loops or string multiplication",
+      "Row i should have i asterisks",
+      "range(1, 6) gives 1 to 5"
+    ],
+    "solution": "for i in range(1, 6):\n    print('*' * i)",
+    "expected_output": "*\n**\n***\n****\n*****\n"
+  },
+  {
+    "id": "control_013",
+    "title": "Sum of Digits",
+    "difficulty": "Intermediate",
+    "category": "Control Flow",
+    "description": "Calculate the sum of digits in the number 12345. Print the sum.",
+    "starter_code": "num = 12345\n\n# Calculate sum of digits\n",
+    "hints": [
+      "Convert number to string to iterate digits",
+      "Or use modulo and division",
+      "Convert each digit back to int before adding"
+    ],
+    "solution": "num = 12345\ntotal = 0\n\nfor digit in str(num):\n    total += int(digit)\n\nprint(total)",
+    "expected_output": "15\n"
+  },
+  {
+    "id": "control_014",
+    "title": "Guess Number Logic",
+    "difficulty": "Intermediate",
+    "category": "Control Flow",
+    "description": "Simulate a number guessing game. The secret is 7. Given guesses = [3, 9, 5, 7], print 'Too low', 'Too high', or 'Correct!' for each guess.",
+    "starter_code": "secret = 7\nguesses = [3, 9, 5, 7]\n\n# Process each guess\n",
+    "hints": [
+      "Use a for loop to iterate guesses",
+      "Compare each guess to secret",
+      "Use if-elif-else for the three cases"
+    ],
+    "solution": "secret = 7\nguesses = [3, 9, 5, 7]\n\nfor guess in guesses:\n    if guess < secret:\n        print('Too low')\n    elif guess > secret:\n        print('Too high')\n    else:\n        print('Correct!')",
+    "expected_output": "Too low\nToo high\nToo low\nCorrect!\n"
+  },
+  {
+    "id": "control_015",
+    "title": "Fibonacci Sequence",
+    "difficulty": "Intermediate",
+    "category": "Control Flow",
+    "description": "Print the first 10 numbers of the Fibonacci sequence (0, 1, 1, 2, 3, 5, 8, 13, 21, 34).",
+    "starter_code": "# Print first 10 Fibonacci numbers\n",
+    "hints": [
+      "Start with a=0, b=1",
+      "Each number is sum of previous two",
+      "Update: a, b = b, a+b"
+    ],
+    "solution": "a, b = 0, 1\nfor _ in range(10):\n    print(a)\n    a, b = b, a + b",
+    "expected_output": "0\n1\n1\n2\n3\n5\n8\n13\n21\n34\n"
+  },
+  {
+    "id": "control_016",
+    "title": "Palindrome Check",
+    "difficulty": "Intermediate",
+    "category": "Control Flow",
+    "description": "Check if the string 'racecar' is a palindrome (reads same forwards and backwards). Print 'Palindrome' or 'Not palindrome'.",
+    "starter_code": "word = 'racecar'\n\n# Check if palindrome\n",
+    "hints": [
+      "Reverse string: word[::-1]",
+      "Compare original with reversed",
+      "Or check characters from both ends"
+    ],
+    "solution": "word = 'racecar'\n\nif word == word[::-1]:\n    print('Palindrome')\nelse:\n    print('Not palindrome')",
+    "expected_output": "Palindrome\n"
+  },
+  {
+    "id": "func_008",
+    "title": "Calculate Average",
+    "difficulty": "Beginner",
+    "category": "Functions",
+    "description": "Create a function 'average' that takes a list of numbers and returns their average. Test with [10, 20, 30, 40, 50].",
+    "starter_code": "# Define average function\n\n# Test\n",
+    "hints": [
+      "Average = sum / count",
+      "Use sum() and len() built-ins",
+      "Return the calculated average"
+    ],
+    "solution": "def average(numbers):\n    return sum(numbers) / len(numbers)\n\nresult = average([10, 20, 30, 40, 50])\nprint(result)",
+    "expected_output": "30.0\n"
+  },
+  {
+    "id": "func_009",
+    "title": "Count Vowels",
+    "difficulty": "Beginner",
+    "category": "Functions",
+    "description": "Create a function 'count_vowels' that counts vowels (a,e,i,o,u) in a string. Test with 'Hello World'.",
+    "starter_code": "# Define count_vowels function\n\n# Test\n",
+    "hints": [
+      "Define vowels as 'aeiouAEIOU'",
+      "Loop through each character",
+      "Check if character is in vowels"
+    ],
+    "solution": "def count_vowels(text):\n    vowels = 'aeiouAEIOU'\n    count = 0\n    for char in text:\n        if char in vowels:\n            count += 1\n    return count\n\nprint(count_vowels('Hello World'))",
+    "expected_output": "3\n"
+  },
+  {
+    "id": "func_010",
+    "title": "Is Even Function",
+    "difficulty": "Beginner",
+    "category": "Functions",
+    "description": "Create a function 'is_even' that returns True if a number is even, False otherwise. Test with 4, 7, and 0.",
+    "starter_code": "# Define is_even function\n\n# Test with 4, 7, 0\n",
+    "hints": [
+      "Use modulo operator %",
+      "Even if num % 2 == 0",
+      "Return boolean directly"
+    ],
+    "solution": "def is_even(num):\n    return num % 2 == 0\n\nprint(is_even(4))\nprint(is_even(7))\nprint(is_even(0))",
+    "expected_output": "True\nFalse\nTrue\n"
+  },
+  {
+    "id": "func_011",
+    "title": "Temperature Converter",
+    "difficulty": "Beginner",
+    "category": "Functions",
+    "description": "Create two functions: 'celsius_to_fahrenheit' and 'fahrenheit_to_celsius'. Test converting 100°C to F and 32°F to C.",
+    "starter_code": "# Define conversion functions\n\n# Test\n",
+    "hints": [
+      "F = C * 9/5 + 32",
+      "C = (F - 32) * 5/9",
+      "Return the converted value"
+    ],
+    "solution": "def celsius_to_fahrenheit(c):\n    return c * 9/5 + 32\n\ndef fahrenheit_to_celsius(f):\n    return (f - 32) * 5/9\n\nprint(celsius_to_fahrenheit(100))\nprint(fahrenheit_to_celsius(32))",
+    "expected_output": "212.0\n0.0\n"
+  },
+  {
+    "id": "func_012",
+    "title": "Find Maximum",
+    "difficulty": "Beginner",
+    "category": "Functions",
+    "description": "Create a function 'find_max' that finds the maximum value in a list WITHOUT using the built-in max(). Test with [3, 7, 2, 9, 1].",
+    "starter_code": "# Define find_max function\n\n# Test\n",
+    "hints": [
+      "Initialize max with first element",
+      "Loop through remaining elements",
+      "Update max if current is larger"
+    ],
+    "solution": "def find_max(numbers):\n    maximum = numbers[0]\n    for num in numbers[1:]:\n        if num > maximum:\n            maximum = num\n    return maximum\n\nprint(find_max([3, 7, 2, 9, 1]))",
+    "expected_output": "9\n"
+  },
+  {
+    "id": "func_013",
+    "title": "Reverse String",
+    "difficulty": "Beginner",
+    "category": "Functions",
+    "description": "Create a function 'reverse_string' that reverses a string. Test with 'Python'.",
+    "starter_code": "# Define reverse_string function\n\n# Test\n",
+    "hints": [
+      "Use slicing with [::-1]",
+      "Or build reversed string with loop",
+      "Return the reversed string"
+    ],
+    "solution": "def reverse_string(text):\n    return text[::-1]\n\nprint(reverse_string('Python'))",
+    "expected_output": "nohtyP\n"
+  },
+  {
+    "id": "func_014",
+    "title": "GCD Function",
+    "difficulty": "Intermediate",
+    "category": "Functions",
+    "description": "Create a function 'gcd' that calculates the Greatest Common Divisor of two numbers using Euclidean algorithm. Test with gcd(48, 18).",
+    "starter_code": "# Define gcd function\n\n# Test\n",
+    "hints": [
+      "Euclidean: gcd(a,b) = gcd(b, a%b)",
+      "Base case: when b is 0, return a",
+      "Can use recursion or loop"
+    ],
+    "solution": "def gcd(a, b):\n    while b:\n        a, b = b, a % b\n    return a\n\nprint(gcd(48, 18))",
+    "expected_output": "6\n"
+  },
+  {
+    "id": "func_015",
+    "title": "Flatten List",
+    "difficulty": "Intermediate",
+    "category": "Functions",
+    "description": "Create a function 'flatten' that flattens a nested list one level. Test with [[1, 2], [3, 4], [5, 6]].",
+    "starter_code": "# Define flatten function\n\n# Test\n",
+    "hints": [
+      "Create empty result list",
+      "Loop through outer list",
+      "Extend result with each inner list"
+    ],
+    "solution": "def flatten(nested):\n    result = []\n    for sublist in nested:\n        result.extend(sublist)\n    return result\n\nprint(flatten([[1, 2], [3, 4], [5, 6]]))",
+    "expected_output": "[1, 2, 3, 4, 5, 6]\n"
+  },
+  {
+    "id": "func_016",
+    "title": "Word Counter",
+    "difficulty": "Intermediate",
+    "category": "Functions",
+    "description": "Create a function 'count_words' that returns a dictionary of word frequencies. Test with 'the cat and the dog and the bird'.",
+    "starter_code": "# Define count_words function\n\n# Test\n",
+    "hints": [
+      "Split string into words",
+      "Use dictionary to count",
+      "dict.get(key, 0) helps with counting"
+    ],
+    "solution": "def count_words(text):\n    words = text.split()\n    counts = {}\n    for word in words:\n        counts[word] = counts.get(word, 0) + 1\n    return counts\n\nprint(count_words('the cat and the dog and the bird'))",
+    "expected_output": "{'the': 3, 'cat': 1, 'and': 2, 'dog': 1, 'bird': 1}\n"
+  },
+  {
+    "id": "data_010",
+    "title": "List Comprehension Filter",
+    "difficulty": "Beginner",
+    "category": "Data Structures",
+    "description": "Given numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], use list comprehension to create a list of numbers greater than 5.",
+    "starter_code": "numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\n\n# Create filtered list\n",
+    "hints": [
+      "List comprehension: [x for x in list if condition]",
+      "Condition: x > 5",
+      "Result will be [6, 7, 8, 9, 10]"
+    ],
+    "solution": "numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\n\nfiltered = [x for x in numbers if x > 5]\nprint(filtered)",
+    "expected_output": "[6, 7, 8, 9, 10]\n"
+  },
+  {
+    "id": "data_011",
+    "title": "Zip Lists",
+    "difficulty": "Beginner",
+    "category": "Data Structures",
+    "description": "Given names = ['Alice', 'Bob', 'Charlie'] and ages = [25, 30, 35], use zip() to print pairs like 'Alice is 25'.",
+    "starter_code": "names = ['Alice', 'Bob', 'Charlie']\nages = [25, 30, 35]\n\n# Use zip to pair and print\n",
+    "hints": [
+      "zip() combines two lists element-wise",
+      "Use for loop: for name, age in zip(...)",
+      "Print with f-string"
+    ],
+    "solution": "names = ['Alice', 'Bob', 'Charlie']\nages = [25, 30, 35]\n\nfor name, age in zip(names, ages):\n    print(f'{name} is {age}')",
+    "expected_output": "Alice is 25\nBob is 30\nCharlie is 35\n"
+  },
+  {
+    "id": "data_012",
+    "title": "Sort List",
+    "difficulty": "Beginner",
+    "category": "Data Structures",
+    "description": "Given numbers = [64, 34, 25, 12, 22, 11, 90], print the list sorted in ascending and descending order.",
+    "starter_code": "numbers = [64, 34, 25, 12, 22, 11, 90]\n\n# Print sorted ascending and descending\n",
+    "hints": [
+      "Use sorted() to get new sorted list",
+      "reverse=True for descending",
+      "Or use .sort() method (modifies in place)"
+    ],
+    "solution": "numbers = [64, 34, 25, 12, 22, 11, 90]\n\nprint(sorted(numbers))\nprint(sorted(numbers, reverse=True))",
+    "expected_output": "[11, 12, 22, 25, 34, 64, 90]\n[90, 64, 34, 25, 22, 12, 11]\n"
+  },
+  {
+    "id": "data_013",
+    "title": "Dictionary Get Method",
+    "difficulty": "Beginner",
+    "category": "Data Structures",
+    "description": "Given inventory = {'apples': 5, 'oranges': 3}, use .get() to safely access 'apples' and 'bananas' (which doesn't exist). Use default value 0 for missing keys.",
+    "starter_code": "inventory = {'apples': 5, 'oranges': 3}\n\n# Use get() with default\n",
+    "hints": [
+      "dict.get(key, default) returns default if key missing",
+      "Without get(), missing key raises KeyError",
+      "Default value is 0"
+    ],
+    "solution": "inventory = {'apples': 5, 'oranges': 3}\n\nprint(inventory.get('apples', 0))\nprint(inventory.get('bananas', 0))",
+    "expected_output": "5\n0\n"
+  },
+  {
+    "id": "data_014",
+    "title": "List Count and Index",
+    "difficulty": "Beginner",
+    "category": "Data Structures",
+    "description": "Given letters = ['a', 'b', 'a', 'c', 'a', 'b'], count how many 'a's there are and find the index of the first 'c'.",
+    "starter_code": "letters = ['a', 'b', 'a', 'c', 'a', 'b']\n\n# Count 'a' and find index of 'c'\n",
+    "hints": [
+      "Use .count() to count occurrences",
+      "Use .index() to find first occurrence",
+      "Both are list methods"
+    ],
+    "solution": "letters = ['a', 'b', 'a', 'c', 'a', 'b']\n\nprint(letters.count('a'))\nprint(letters.index('c'))",
+    "expected_output": "3\n3\n"
+  },
+  {
+    "id": "data_015",
+    "title": "Dictionary Iteration",
+    "difficulty": "Beginner",
+    "category": "Data Structures",
+    "description": "Given scores = {'Alice': 95, 'Bob': 87, 'Charlie': 92}, iterate and print each name and score formatted as 'Name: Score'.",
+    "starter_code": "scores = {'Alice': 95, 'Bob': 87, 'Charlie': 92}\n\n# Iterate and print\n",
+    "hints": [
+      "Use .items() to get key-value pairs",
+      "for name, score in dict.items():",
+      "Use f-string for formatting"
+    ],
+    "solution": "scores = {'Alice': 95, 'Bob': 87, 'Charlie': 92}\n\nfor name, score in scores.items():\n    print(f'{name}: {score}')",
+    "expected_output": "Alice: 95\nBob: 87\nCharlie: 92\n"
+  },
+  {
+    "id": "data_016",
+    "title": "Remove Duplicates",
+    "difficulty": "Beginner",
+    "category": "Data Structures",
+    "description": "Given numbers = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4], remove duplicates and print the unique values (order doesn't matter).",
+    "starter_code": "numbers = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4]\n\n# Remove duplicates\n",
+    "hints": [
+      "Convert to set to remove duplicates",
+      "Sets only contain unique values",
+      "Convert back to list if needed"
+    ],
+    "solution": "numbers = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4]\n\nunique = list(set(numbers))\nprint(sorted(unique))",
+    "expected_output": "[1, 2, 3, 4]\n"
+  },
+  {
+    "id": "data_017",
+    "title": "List Reverse",
+    "difficulty": "Beginner",
+    "category": "Data Structures",
+    "description": "Given items = [1, 2, 3, 4, 5], reverse the list and print it. Show two different methods.",
+    "starter_code": "items = [1, 2, 3, 4, 5]\n\n# Reverse using two methods\n",
+    "hints": [
+      "Method 1: slicing [::-1]",
+      "Method 2: reversed() function",
+      "Or .reverse() method (in-place)"
+    ],
+    "solution": "items = [1, 2, 3, 4, 5]\n\n# Method 1: slicing\nprint(items[::-1])\n\n# Method 2: reversed()\nprint(list(reversed(items)))",
+    "expected_output": "[5, 4, 3, 2, 1]\n[5, 4, 3, 2, 1]\n"
+  },
+  {
+    "id": "data_018",
+    "title": "Join List to String",
+    "difficulty": "Beginner",
+    "category": "Data Structures",
+    "description": "Given words = ['Hello', 'World', 'Python'], join them into a single string with spaces, then with dashes.",
+    "starter_code": "words = ['Hello', 'World', 'Python']\n\n# Join with spaces, then with dashes\n",
+    "hints": [
+      "Use str.join(list) method",
+      "' '.join(words) for spaces",
+      "'-'.join(words) for dashes"
+    ],
+    "solution": "words = ['Hello', 'World', 'Python']\n\nprint(' '.join(words))\nprint('-'.join(words))",
+    "expected_output": "Hello World Python\nHello-World-Python\n"
+  },
+  {
+    "id": "data_019",
+    "title": "Matrix Creation",
+    "difficulty": "Intermediate",
+    "category": "Data Structures",
+    "description": "Create a 3x3 matrix (list of lists) filled with zeros. Then print each row.",
+    "starter_code": "# Create 3x3 matrix of zeros\n\n# Print each row\n",
+    "hints": [
+      "Use nested list comprehension",
+      "[[0]*3 for _ in range(3)]",
+      "Iterate rows to print"
+    ],
+    "solution": "matrix = [[0 for _ in range(3)] for _ in range(3)]\n\nfor row in matrix:\n    print(row)",
+    "expected_output": "[0, 0, 0]\n[0, 0, 0]\n[0, 0, 0]\n"
+  },
+  {
+    "id": "data_020",
+    "title": "Transpose Matrix",
+    "difficulty": "Intermediate",
+    "category": "Data Structures",
+    "description": "Given matrix = [[1, 2, 3], [4, 5, 6]], transpose it (rows become columns).",
+    "starter_code": "matrix = [[1, 2, 3], [4, 5, 6]]\n\n# Transpose the matrix\n",
+    "hints": [
+      "Use zip(*matrix) to transpose",
+      "Convert zip result to list of lists",
+      "Each tuple from zip is a row"
+    ],
+    "solution": "matrix = [[1, 2, 3], [4, 5, 6]]\n\ntransposed = [list(row) for row in zip(*matrix)]\nfor row in transposed:\n    print(row)",
+    "expected_output": "[1, 4]\n[2, 5]\n[3, 6]\n"
+  },
+  {
+    "id": "handling_005",
+    "title": "Write Multiple Lines",
+    "difficulty": "Intermediate",
+    "category": "Data Handling",
+    "description": "Create a file 'lines.txt' with three lines: 'First', 'Second', 'Third'. Then read and print all lines.",
+    "starter_code": "# Write multiple lines to file\n\n# Read and print all lines\n",
+    "hints": [
+      "Use writelines() or multiple write() calls",
+      "Don't forget \\n at end of each line",
+      "Use readlines() to read all lines"
+    ],
+    "solution": "with open('lines.txt', 'w') as f:\n    f.write('First\\n')\n    f.write('Second\\n')\n    f.write('Third\\n')\n\nwith open('lines.txt', 'r') as f:\n    for line in f:\n        print(line.strip())",
+    "expected_output": "First\nSecond\nThird\n"
+  },
+  {
+    "id": "handling_006",
+    "title": "Count Lines in File",
+    "difficulty": "Intermediate",
+    "category": "Data Handling",
+    "description": "Create a file with 5 lines of text, then count and print the number of lines.",
+    "starter_code": "# Create file with 5 lines\n\n# Count lines\n",
+    "hints": [
+      "Write 5 lines to file first",
+      "Read all lines into a list",
+      "Use len() to count"
+    ],
+    "solution": "# Create file\nwith open('count.txt', 'w') as f:\n    for i in range(1, 6):\n        f.write(f'Line {i}\\n')\n\n# Count lines\nwith open('count.txt', 'r') as f:\n    lines = f.readlines()\n    print(len(lines))",
+    "expected_output": "5\n"
+  },
+  {
+    "id": "handling_007",
+    "title": "Parse Key-Value Pairs",
+    "difficulty": "Intermediate",
+    "category": "Data Handling",
+    "description": "Given config = 'host=localhost;port=8080;debug=true', parse it into a dictionary.",
+    "starter_code": "config = 'host=localhost;port=8080;debug=true'\n\n# Parse into dictionary\n",
+    "hints": [
+      "First split by ';' to get pairs",
+      "Then split each pair by '='",
+      "Build dictionary from key-value pairs"
+    ],
+    "solution": "config = 'host=localhost;port=8080;debug=true'\n\nresult = {}\nfor pair in config.split(';'):\n    key, value = pair.split('=')\n    result[key] = value\n\nprint(result)",
+    "expected_output": "{'host': 'localhost', 'port': '8080', 'debug': 'true'}\n"
+  },
+  {
+    "id": "handling_008",
+    "title": "Format Numbers",
+    "difficulty": "Intermediate",
+    "category": "Data Handling",
+    "description": "Format and print:\n1. 1234567 with thousand separators\n2. 3.14159 with 2 decimal places\n3. 0.25 as a percentage",
+    "starter_code": "# Format numbers\n",
+    "hints": [
+      "Use f-string format specifiers",
+      "{:,} for thousand separators",
+      "{:.2f} for 2 decimals, {:.0%} for percent"
+    ],
+    "solution": "print(f'{1234567:,}')\nprint(f'{3.14159:.2f}')\nprint(f'{0.25:.0%}')",
+    "expected_output": "1,234,567\n3.14\n25%\n"
+  },
+  {
+    "id": "handling_009",
+    "title": "Regular Expression Match",
+    "difficulty": "Intermediate",
+    "category": "Data Handling",
+    "description": "Use regex to find all numbers in the string 'I have 3 apples and 5 oranges, total 8 fruits.'",
+    "starter_code": "import re\n\ntext = 'I have 3 apples and 5 oranges, total 8 fruits.'\n\n# Find all numbers\n",
+    "hints": [
+      "import re module",
+      "Use re.findall() to find all matches",
+      "Pattern \\d+ matches one or more digits"
+    ],
+    "solution": "import re\n\ntext = 'I have 3 apples and 5 oranges, total 8 fruits.'\n\nnumbers = re.findall(r'\\d+', text)\nprint(numbers)",
+    "expected_output": "['3', '5', '8']\n"
+  },
+  {
+    "id": "handling_010",
+    "title": "Email Validation Pattern",
+    "difficulty": "Intermediate",
+    "category": "Data Handling",
+    "description": "Use regex to check if 'user@example.com' is a valid email format. Print True or False.",
+    "starter_code": "import re\n\nemail = 'user@example.com'\n\n# Validate email format\n",
+    "hints": [
+      "Basic email pattern: \\w+@\\w+\\.\\w+",
+      "Use re.match() or re.search()",
+      "Result is truthy if match found"
+    ],
+    "solution": "import re\n\nemail = 'user@example.com'\n\npattern = r'^[\\w.-]+@[\\w.-]+\\.\\w+$'\nmatch = re.match(pattern, email)\nprint(bool(match))",
+    "expected_output": "True\n"
+  },
+  {
+    "id": "except_005",
+    "title": "Custom Exception",
+    "difficulty": "Intermediate",
+    "category": "Exception Handling",
+    "description": "Create a custom exception class 'NegativeNumberError'. Use it in a function that raises this error for negative inputs.",
+    "starter_code": "# Define custom exception\n\n# Function that uses it\n\n# Test\n",
+    "hints": [
+      "Inherit from Exception class",
+      "class MyError(Exception): pass",
+      "Raise with: raise MyError('message')"
+    ],
+    "solution": "class NegativeNumberError(Exception):\n    pass\n\ndef check_positive(num):\n    if num < 0:\n        raise NegativeNumberError(f'{num} is negative!')\n    return num\n\ntry:\n    print(check_positive(5))\n    print(check_positive(-3))\nexcept NegativeNumberError as e:\n    print(f'Error: {e}')",
+    "expected_output": "5\nError: -3 is negative!\n"
+  },
+  {
+    "id": "except_006",
+    "title": "Exception Chaining",
+    "difficulty": "Advanced",
+    "category": "Exception Handling",
+    "description": "Demonstrate exception chaining using 'raise ... from'. Convert a ValueError to a custom error.",
+    "starter_code": "# Demonstrate exception chaining\n",
+    "hints": [
+      "Use 'raise NewError from original'",
+      "This preserves the original exception",
+      "Access with __cause__ attribute"
+    ],
+    "solution": "class DataError(Exception):\n    pass\n\ndef process_number(text):\n    try:\n        return int(text)\n    except ValueError as e:\n        raise DataError(f'Cannot process: {text}') from e\n\ntry:\n    process_number('abc')\nexcept DataError as e:\n    print(f'DataError: {e}')\n    print(f'Caused by: {e.__cause__}')",
+    "expected_output": "DataError: Cannot process: abc\nCaused by: invalid literal for int() with base 10: 'abc'\n"
+  },
+  {
+    "id": "except_007",
+    "title": "Assert Statement",
+    "difficulty": "Intermediate",
+    "category": "Exception Handling",
+    "description": "Use assert to validate that a list is not empty. Test with an empty list and catch AssertionError.",
+    "starter_code": "# Use assert with empty list check\n",
+    "hints": [
+      "assert condition, 'error message'",
+      "AssertionError raised when condition is False",
+      "Wrap in try-except to catch"
+    ],
+    "solution": "def process_list(items):\n    assert len(items) > 0, 'List cannot be empty'\n    return sum(items)\n\ntry:\n    print(process_list([1, 2, 3]))\n    print(process_list([]))\nexcept AssertionError as e:\n    print(f'AssertionError: {e}')",
+    "expected_output": "6\nAssertionError: List cannot be empty\n"
+  },
+  {
+    "id": "adv_010",
+    "title": "Property Decorator",
+    "difficulty": "Advanced",
+    "category": "Advanced",
+    "description": "Create a Circle class with a radius attribute. Use @property to create a read-only 'area' property.",
+    "starter_code": "import math\n\n# Define Circle class with area property\n\n# Test\n",
+    "hints": [
+      "@property decorator makes method act like attribute",
+      "Area = pi * radius^2",
+      "Access as circle.area (no parentheses)"
+    ],
+    "solution": "import math\n\nclass Circle:\n    def __init__(self, radius):\n        self.radius = radius\n    \n    @property\n    def area(self):\n        return math.pi * self.radius ** 2\n\nc = Circle(5)\nprint(f'{c.area:.2f}')",
+    "expected_output": "78.54\n"
+  },
+  {
+    "id": "adv_011",
+    "title": "Static Method",
+    "difficulty": "Advanced",
+    "category": "Advanced",
+    "description": "Create a MathUtils class with a static method 'is_prime' that checks if a number is prime.",
+    "starter_code": "# Define MathUtils class with static method\n\n# Test\n",
+    "hints": [
+      "Use @staticmethod decorator",
+      "Static methods don't need self parameter",
+      "Called as ClassName.method()"
+    ],
+    "solution": "class MathUtils:\n    @staticmethod\n    def is_prime(n):\n        if n < 2:\n            return False\n        for i in range(2, int(n**0.5) + 1):\n            if n % i == 0:\n                return False\n        return True\n\nprint(MathUtils.is_prime(17))\nprint(MathUtils.is_prime(18))",
+    "expected_output": "True\nFalse\n"
+  },
+  {
+    "id": "adv_012",
+    "title": "Class Method",
+    "difficulty": "Advanced",
+    "category": "Advanced",
+    "description": "Create a Person class with a class method 'from_string' that creates a Person from 'name,age' format.",
+    "starter_code": "# Define Person class with class method\n\n# Test\n",
+    "hints": [
+      "Use @classmethod decorator",
+      "First parameter is cls (the class)",
+      "Returns cls(...) to create instance"
+    ],
+    "solution": "class Person:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n    \n    @classmethod\n    def from_string(cls, data):\n        name, age = data.split(',')\n        return cls(name, int(age))\n\np = Person.from_string('Alice,30')\nprint(f'{p.name} is {p.age}')",
+    "expected_output": "Alice is 30\n"
+  },
+  {
+    "id": "adv_013",
+    "title": "Dunder Methods",
+    "difficulty": "Advanced",
+    "category": "Advanced",
+    "description": "Create a Vector class with __init__, __repr__, and __add__ methods. Support adding two vectors.",
+    "starter_code": "# Define Vector class with dunder methods\n\n# Test\n",
+    "hints": [
+      "__repr__ returns string representation",
+      "__add__ enables + operator",
+      "Return new Vector from __add__"
+    ],
+    "solution": "class Vector:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    \n    def __repr__(self):\n        return f'Vector({self.x}, {self.y})'\n    \n    def __add__(self, other):\n        return Vector(self.x + other.x, self.y + other.y)\n\nv1 = Vector(1, 2)\nv2 = Vector(3, 4)\nprint(v1 + v2)",
+    "expected_output": "Vector(4, 6)\n"
+  },
+  {
+    "id": "adv_014",
+    "title": "Iterator Class",
+    "difficulty": "Advanced",
+    "category": "Advanced",
+    "description": "Create a Countdown iterator class that counts down from a number to 1.",
+    "starter_code": "# Define Countdown iterator class\n\n# Test\n",
+    "hints": [
+      "Implement __iter__ and __next__",
+      "__iter__ returns self",
+      "__next__ returns next value or raises StopIteration"
+    ],
+    "solution": "class Countdown:\n    def __init__(self, start):\n        self.current = start\n    \n    def __iter__(self):\n        return self\n    \n    def __next__(self):\n        if self.current < 1:\n            raise StopIteration\n        value = self.current\n        self.current -= 1\n        return value\n\nfor num in Countdown(5):\n    print(num)",
+    "expected_output": "5\n4\n3\n2\n1\n"
+  },
+  {
+    "id": "adv_015",
+    "title": "Decorator with Arguments",
+    "difficulty": "Advanced",
+    "category": "Advanced",
+    "description": "Create a decorator 'repeat' that takes a number n and calls the decorated function n times.",
+    "starter_code": "# Define repeat decorator with argument\n\n# Test\n",
+    "hints": [
+      "Need three nested functions",
+      "Outer takes decorator arg, middle takes func",
+      "Inner calls func n times"
+    ],
+    "solution": "def repeat(n):\n    def decorator(func):\n        def wrapper(*args, **kwargs):\n            for _ in range(n):\n                func(*args, **kwargs)\n        return wrapper\n    return decorator\n\n@repeat(3)\ndef say_hello():\n    print('Hello!')\n\nsay_hello()",
+    "expected_output": "Hello!\nHello!\nHello!\n"
+  },
+  {
+    "id": "adv_016",
+    "title": "Closure",
+    "difficulty": "Advanced",
+    "category": "Advanced",
+    "description": "Create a closure 'make_multiplier' that returns a function multiplying by a fixed number.",
+    "starter_code": "# Define make_multiplier closure\n\n# Test\n",
+    "hints": [
+      "Outer function takes the multiplier",
+      "Inner function uses that value",
+      "Return the inner function"
+    ],
+    "solution": "def make_multiplier(n):\n    def multiplier(x):\n        return x * n\n    return multiplier\n\ndouble = make_multiplier(2)\ntriple = make_multiplier(3)\n\nprint(double(5))\nprint(triple(5))",
+    "expected_output": "10\n15\n"
+  },
+  {
+    "id": "adv_017",
+    "title": "Generator Expression",
+    "difficulty": "Intermediate",
+    "category": "Advanced",
+    "description": "Use a generator expression to create a generator of squares from 1 to 5. Print each value.",
+    "starter_code": "# Create generator expression\n\n# Print values\n",
+    "hints": [
+      "Like list comprehension but with ()",
+      "(expression for item in iterable)",
+      "Iterate with for loop"
+    ],
+    "solution": "squares = (x**2 for x in range(1, 6))\n\nfor sq in squares:\n    print(sq)",
+    "expected_output": "1\n4\n9\n16\n25\n"
+  },
+  {
+    "id": "adv_018",
+    "title": "Partial Functions",
+    "difficulty": "Advanced",
+    "category": "Advanced",
+    "description": "Use functools.partial to create a function that always multiplies by 2.",
+    "starter_code": "from functools import partial\n\n# Create partial function\n\n# Test\n",
+    "hints": [
+      "partial(func, arg) fixes the first argument",
+      "Create base multiply function first",
+      "partial returns a new function"
+    ],
+    "solution": "from functools import partial\n\ndef multiply(x, y):\n    return x * y\n\ndouble = partial(multiply, 2)\n\nprint(double(5))\nprint(double(10))",
+    "expected_output": "10\n20\n"
+  },
+  {
+    "id": "adv_019",
+    "title": "Named Tuple",
+    "difficulty": "Intermediate",
+    "category": "Advanced",
+    "description": "Create a named tuple 'Point' with x and y fields. Create a point at (3, 4) and print its coordinates.",
+    "starter_code": "from collections import namedtuple\n\n# Create Point named tuple\n\n# Test\n",
+    "hints": [
+      "namedtuple('Name', ['field1', 'field2'])",
+      "Access fields by name: point.x",
+      "Also supports index access"
+    ],
+    "solution": "from collections import namedtuple\n\nPoint = namedtuple('Point', ['x', 'y'])\n\np = Point(3, 4)\nprint(f'x: {p.x}, y: {p.y}')\nprint(f'Point: {p}')",
+    "expected_output": "x: 3, y: 4\nPoint: Point(x=3, y=4)\n"
+  },
+  {
+    "id": "adv_020",
+    "title": "DefaultDict",
+    "difficulty": "Intermediate",
+    "category": "Advanced",
+    "description": "Use defaultdict to count letters in 'hello'. Print the counts.",
+    "starter_code": "from collections import defaultdict\n\nword = 'hello'\n\n# Count letters using defaultdict\n",
+    "hints": [
+      "defaultdict(int) gives 0 as default",
+      "No need to check if key exists",
+      "Just increment: d[key] += 1"
+    ],
+    "solution": "from collections import defaultdict\n\nword = 'hello'\n\ncounts = defaultdict(int)\nfor letter in word:\n    counts[letter] += 1\n\nfor letter, count in sorted(counts.items()):\n    print(f'{letter}: {count}')",
+    "expected_output": "e: 1\nh: 1\nl: 2\no: 1\n"
+  },
+  {
+    "id": "adv_021",
+    "title": "Counter",
+    "difficulty": "Intermediate",
+    "category": "Advanced",
+    "description": "Use Counter to find the most common words in 'the quick brown fox jumps over the lazy dog the'.",
+    "starter_code": "from collections import Counter\n\ntext = 'the quick brown fox jumps over the lazy dog the'\n\n# Count words and find most common\n",
+    "hints": [
+      "Counter(list) counts occurrences",
+      "Use .most_common(n) for top n",
+      "Split text into words first"
+    ],
+    "solution": "from collections import Counter\n\ntext = 'the quick brown fox jumps over the lazy dog the'\n\nwords = text.split()\nword_counts = Counter(words)\n\nfor word, count in word_counts.most_common(3):\n    print(f'{word}: {count}')",
+    "expected_output": "the: 3\nquick: 1\nbrown: 1\n"
+  },
+  {
+    "id": "control_017",
+    "title": "Ternary Operator",
+    "difficulty": "Beginner",
+    "category": "Control Flow",
+    "description": "Use the ternary operator to assign 'adult' or 'minor' to a variable based on age = 20. Print the result.",
+    "starter_code": "age = 20\n\n# Use ternary operator\n",
+    "hints": [
+      "Syntax: value_if_true if condition else value_if_false",
+      "Check if age >= 18",
+      "Assign result to variable"
+    ],
+    "solution": "age = 20\n\nstatus = 'adult' if age >= 18 else 'minor'\nprint(status)",
+    "expected_output": "adult\n"
+  },
+  {
+    "id": "control_018",
+    "title": "Any and All",
+    "difficulty": "Intermediate",
+    "category": "Control Flow",
+    "description": "Given numbers = [2, 4, 6, 8, 9], check if all numbers are even and if any number is greater than 7.",
+    "starter_code": "numbers = [2, 4, 6, 8, 9]\n\n# Check with any() and all()\n",
+    "hints": [
+      "all() returns True if all elements are truthy",
+      "any() returns True if at least one is truthy",
+      "Use with generator expression"
+    ],
+    "solution": "numbers = [2, 4, 6, 8, 9]\n\nall_even = all(n % 2 == 0 for n in numbers)\nany_greater = any(n > 7 for n in numbers)\n\nprint(f'All even: {all_even}')\nprint(f'Any > 7: {any_greater}')",
+    "expected_output": "All even: False\nAny > 7: True\n"
+  },
+  {
+    "id": "control_019",
+    "title": "Match Statement",
+    "difficulty": "Intermediate",
+    "category": "Control Flow",
+    "description": "Use a match statement (Python 3.10+) to print the day type for day = 'Saturday' (weekend/weekday).",
+    "starter_code": "day = 'Saturday'\n\n# Use match statement\n",
+    "hints": [
+      "match variable: case pattern:",
+      "Use | for multiple patterns",
+      "case _: for default"
+    ],
+    "solution": "day = 'Saturday'\n\nmatch day:\n    case 'Saturday' | 'Sunday':\n        print('Weekend')\n    case _:\n        print('Weekday')",
+    "expected_output": "Weekend\n"
+  },
+  {
+    "id": "func_017",
+    "title": "Binary Search",
+    "difficulty": "Intermediate",
+    "category": "Functions",
+    "description": "Implement binary search function that returns the index of target in a sorted list, or -1 if not found. Test with [1,3,5,7,9,11] finding 7.",
+    "starter_code": "# Define binary_search function\n\n# Test\n",
+    "hints": [
+      "Track left and right indices",
+      "Calculate mid = (left + right) // 2",
+      "Narrow search based on comparison"
+    ],
+    "solution": "def binary_search(arr, target):\n    left, right = 0, len(arr) - 1\n    while left <= right:\n        mid = (left + right) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1\n\nprint(binary_search([1, 3, 5, 7, 9, 11], 7))",
+    "expected_output": "3\n"
+  },
+  {
+    "id": "func_018",
+    "title": "Memoization",
+    "difficulty": "Advanced",
+    "category": "Functions",
+    "description": "Implement fibonacci with memoization using a decorator. Calculate fib(10).",
+    "starter_code": "# Implement memoized fibonacci\n\n# Test\n",
+    "hints": [
+      "Create decorator that caches results",
+      "Use dictionary to store computed values",
+      "Check cache before computing"
+    ],
+    "solution": "def memoize(func):\n    cache = {}\n    def wrapper(n):\n        if n not in cache:\n            cache[n] = func(n)\n        return cache[n]\n    return wrapper\n\n@memoize\ndef fib(n):\n    if n <= 1:\n        return n\n    return fib(n-1) + fib(n-2)\n\nprint(fib(10))",
+    "expected_output": "55\n"
+  },
+  {
+    "id": "func_019",
+    "title": "Bubble Sort",
+    "difficulty": "Intermediate",
+    "category": "Functions",
+    "description": "Implement bubble sort function. Sort [64, 34, 25, 12, 22, 11, 90] and print the result.",
+    "starter_code": "# Implement bubble_sort\n\n# Test\n",
+    "hints": [
+      "Compare adjacent elements",
+      "Swap if they're in wrong order",
+      "Repeat until no swaps needed"
+    ],
+    "solution": "def bubble_sort(arr):\n    n = len(arr)\n    for i in range(n):\n        for j in range(0, n-i-1):\n            if arr[j] > arr[j+1]:\n                arr[j], arr[j+1] = arr[j+1], arr[j]\n    return arr\n\nprint(bubble_sort([64, 34, 25, 12, 22, 11, 90]))",
+    "expected_output": "[11, 12, 22, 25, 34, 64, 90]\n"
+  },
+  {
+    "id": "func_020",
+    "title": "Merge Sorted Lists",
+    "difficulty": "Intermediate",
+    "category": "Functions",
+    "description": "Create a function that merges two sorted lists into one sorted list. Test with [1,3,5] and [2,4,6].",
+    "starter_code": "# Define merge function\n\n# Test\n",
+    "hints": [
+      "Use two pointers, one for each list",
+      "Compare elements, add smaller to result",
+      "Don't forget remaining elements"
+    ],
+    "solution": "def merge(list1, list2):\n    result = []\n    i = j = 0\n    while i < len(list1) and j < len(list2):\n        if list1[i] <= list2[j]:\n            result.append(list1[i])\n            i += 1\n        else:\n            result.append(list2[j])\n            j += 1\n    result.extend(list1[i:])\n    result.extend(list2[j:])\n    return result\n\nprint(merge([1, 3, 5], [2, 4, 6]))",
+    "expected_output": "[1, 2, 3, 4, 5, 6]\n"
+  },
+  {
+    "id": "data_021",
+    "title": "Stack Implementation",
+    "difficulty": "Intermediate",
+    "category": "Data Structures",
+    "description": "Implement a Stack class with push, pop, and is_empty methods using a list. Demonstrate with push(1), push(2), pop().",
+    "starter_code": "# Define Stack class\n\n# Test\n",
+    "hints": [
+      "Use list as underlying storage",
+      "push uses append()",
+      "pop uses pop() or pop(-1)"
+    ],
+    "solution": "class Stack:\n    def __init__(self):\n        self.items = []\n    \n    def push(self, item):\n        self.items.append(item)\n    \n    def pop(self):\n        return self.items.pop()\n    \n    def is_empty(self):\n        return len(self.items) == 0\n\ns = Stack()\ns.push(1)\ns.push(2)\nprint(s.pop())\nprint(s.pop())",
+    "expected_output": "2\n1\n"
+  },
+  {
+    "id": "data_022",
+    "title": "Queue Implementation",
+    "difficulty": "Intermediate",
+    "category": "Data Structures",
+    "description": "Implement a Queue class with enqueue, dequeue, and is_empty methods. Test with enqueue(1), enqueue(2), dequeue().",
+    "starter_code": "# Define Queue class\n\n# Test\n",
+    "hints": [
+      "Use list or collections.deque",
+      "enqueue adds to end",
+      "dequeue removes from front"
+    ],
+    "solution": "from collections import deque\n\nclass Queue:\n    def __init__(self):\n        self.items = deque()\n    \n    def enqueue(self, item):\n        self.items.append(item)\n    \n    def dequeue(self):\n        return self.items.popleft()\n    \n    def is_empty(self):\n        return len(self.items) == 0\n\nq = Queue()\nq.enqueue(1)\nq.enqueue(2)\nprint(q.dequeue())\nprint(q.dequeue())",
+    "expected_output": "1\n2\n"
+  },
+  {
+    "id": "data_023",
+    "title": "Linked List Node",
+    "difficulty": "Advanced",
+    "category": "Data Structures",
+    "description": "Create a simple linked list with Node class. Create 3 nodes (1->2->3) and traverse to print values.",
+    "starter_code": "# Define Node class and create linked list\n\n# Traverse and print\n",
+    "hints": [
+      "Node has value and next pointer",
+      "Link nodes: node1.next = node2",
+      "Traverse with while current:"
+    ],
+    "solution": "class Node:\n    def __init__(self, value):\n        self.value = value\n        self.next = None\n\n# Create nodes\nhead = Node(1)\nhead.next = Node(2)\nhead.next.next = Node(3)\n\n# Traverse\ncurrent = head\nwhile current:\n    print(current.value)\n    current = current.next",
+    "expected_output": "1\n2\n3\n"
+  },
+  {
+    "id": "data_024",
+    "title": "Binary Tree Basics",
+    "difficulty": "Advanced",
+    "category": "Data Structures",
+    "description": "Create a binary tree node class. Build a tree with root=1, left=2, right=3. Print root and its children.",
+    "starter_code": "# Define TreeNode class\n\n# Build tree and print\n",
+    "hints": [
+      "TreeNode has value, left, right",
+      "Initialize left and right to None",
+      "Access children: node.left, node.right"
+    ],
+    "solution": "class TreeNode:\n    def __init__(self, value):\n        self.value = value\n        self.left = None\n        self.right = None\n\n# Build tree\nroot = TreeNode(1)\nroot.left = TreeNode(2)\nroot.right = TreeNode(3)\n\nprint(f'Root: {root.value}')\nprint(f'Left: {root.left.value}')\nprint(f'Right: {root.right.value}')",
+    "expected_output": "Root: 1\nLeft: 2\nRight: 3\n"
+  },
+  {
+    "id": "syntax_016",
+    "title": "Walrus Operator",
+    "difficulty": "Intermediate",
+    "category": "Syntax",
+    "description": "Use the walrus operator (:=) to assign and check a value in one expression. Read numbers until sum > 10.",
+    "starter_code": "numbers = [1, 2, 3, 4, 5, 6]\ntotal = 0\n\n# Use walrus operator\n",
+    "hints": [
+      "Walrus := assigns and returns value",
+      "Use in while or if condition",
+      "(total := total + n) > 10"
+    ],
+    "solution": "numbers = [1, 2, 3, 4, 5, 6]\ntotal = 0\n\nfor n in numbers:\n    if (total := total + n) > 10:\n        print(f'Stopped at {n}, total = {total}')\n        break",
+    "expected_output": "Stopped at 5, total = 15\n"
+  },
+  {
+    "id": "syntax_017",
+    "title": "Unpacking Operators",
+    "difficulty": "Intermediate",
+    "category": "Syntax",
+    "description": "Use * to unpack a list in a function call, and ** to unpack a dict. Print the results.",
+    "starter_code": "def greet(name, age, city):\n    print(f'{name}, {age}, from {city}')\n\nargs = ['Alice', 25, 'NYC']\nkwargs = {'name': 'Bob', 'age': 30, 'city': 'LA'}\n\n# Call greet using unpacking\n",
+    "hints": [
+      "* unpacks list/tuple as positional args",
+      "** unpacks dict as keyword args",
+      "func(*list) or func(**dict)"
+    ],
+    "solution": "def greet(name, age, city):\n    print(f'{name}, {age}, from {city}')\n\nargs = ['Alice', 25, 'NYC']\nkwargs = {'name': 'Bob', 'age': 30, 'city': 'LA'}\n\ngreet(*args)\ngreet(**kwargs)",
+    "expected_output": "Alice, 25, from NYC\nBob, 30, from LA\n"
+  },
+  {
+    "id": "syntax_018",
+    "title": "Extended Unpacking",
+    "difficulty": "Intermediate",
+    "category": "Syntax",
+    "description": "Use extended unpacking to get first, last, and middle elements from [1,2,3,4,5].",
+    "starter_code": "numbers = [1, 2, 3, 4, 5]\n\n# Use extended unpacking\n",
+    "hints": [
+      "first, *middle, last = list",
+      "* captures remaining elements as list",
+      "Can use at any position"
+    ],
+    "solution": "numbers = [1, 2, 3, 4, 5]\n\nfirst, *middle, last = numbers\n\nprint(f'First: {first}')\nprint(f'Middle: {middle}')\nprint(f'Last: {last}')",
+    "expected_output": "First: 1\nMiddle: [2, 3, 4]\nLast: 5\n"
+  },
+  {
+    "id": "control_020",
+    "title": "For-Else",
+    "difficulty": "Intermediate",
+    "category": "Control Flow",
+    "description": "Use for-else to search for 4 in [1,2,3,5,6]. The else block runs if no break occurred.",
+    "starter_code": "numbers = [1, 2, 3, 5, 6]\ntarget = 4\n\n# Use for-else\n",
+    "hints": [
+      "else after for runs if loop completes",
+      "break prevents else from running",
+      "Useful for search patterns"
+    ],
+    "solution": "numbers = [1, 2, 3, 5, 6]\ntarget = 4\n\nfor num in numbers:\n    if num == target:\n        print(f'Found {target}')\n        break\nelse:\n    print(f'{target} not found')",
+    "expected_output": "4 not found\n"
+  },
+  {
+    "id": "control_021",
+    "title": "Enumerate with Start",
+    "difficulty": "Beginner",
+    "category": "Control Flow",
+    "description": "Use enumerate with a custom start index of 1 to number items in ['a', 'b', 'c'].",
+    "starter_code": "items = ['a', 'b', 'c']\n\n# Enumerate starting from 1\n",
+    "hints": [
+      "enumerate(list, start=1)",
+      "Start parameter sets initial index",
+      "Default start is 0"
+    ],
+    "solution": "items = ['a', 'b', 'c']\n\nfor i, item in enumerate(items, start=1):\n    print(f'{i}. {item}')",
+    "expected_output": "1. a\n2. b\n3. c\n"
+  },
+  {
+    "id": "handling_011",
+    "title": "Date Formatting",
+    "difficulty": "Intermediate",
+    "category": "Data Handling",
+    "description": "Get today's date and format it as 'YYYY-MM-DD' and 'Month Day, Year'.",
+    "starter_code": "from datetime import date\n\n# Get and format today's date\n",
+    "hints": [
+      "date.today() gets current date",
+      "strftime() formats date",
+      "%Y-%m-%d and %B %d, %Y"
+    ],
+    "solution": "from datetime import date\n\ntoday = date(2024, 1, 15)  # Using fixed date for consistent output\n\nprint(today.strftime('%Y-%m-%d'))\nprint(today.strftime('%B %d, %Y'))",
+    "expected_output": "2024-01-15\nJanuary 15, 2024\n"
+  },
+  {
+    "id": "handling_012",
+    "title": "Time Delta",
+    "difficulty": "Intermediate",
+    "category": "Data Handling",
+    "description": "Calculate the date 30 days from a given date (2024-01-01) using timedelta.",
+    "starter_code": "from datetime import date, timedelta\n\nstart_date = date(2024, 1, 1)\n\n# Calculate date 30 days later\n",
+    "hints": [
+      "timedelta(days=n) represents duration",
+      "Add timedelta to date",
+      "date + timedelta = new date"
+    ],
+    "solution": "from datetime import date, timedelta\n\nstart_date = date(2024, 1, 1)\n\nfuture_date = start_date + timedelta(days=30)\nprint(future_date)",
+    "expected_output": "2024-01-31\n"
+  },
+  {
+    "id": "adv_022",
+    "title": "Dataclass",
+    "difficulty": "Advanced",
+    "category": "Advanced",
+    "description": "Create a dataclass 'Product' with name, price, and quantity fields. Create a product and print it.",
+    "starter_code": "from dataclasses import dataclass\n\n# Define Product dataclass\n\n# Test\n",
+    "hints": [
+      "@dataclass decorator auto-generates methods",
+      "Define fields with type annotations",
+      "__init__, __repr__ generated automatically"
+    ],
+    "solution": "from dataclasses import dataclass\n\n@dataclass\nclass Product:\n    name: str\n    price: float\n    quantity: int\n\np = Product('Laptop', 999.99, 5)\nprint(p)\nprint(f'Total value: ${p.price * p.quantity}')",
+    "expected_output": "Product(name='Laptop', price=999.99, quantity=5)\nTotal value: $4999.95\n"
+  },
+  {
+    "id": "adv_023",
+    "title": "Enum",
+    "difficulty": "Intermediate",
+    "category": "Advanced",
+    "description": "Create an Enum 'Color' with RED, GREEN, BLUE values. Print a color and its value.",
+    "starter_code": "from enum import Enum\n\n# Define Color enum\n\n# Test\n",
+    "hints": [
+      "class Color(Enum): RED = 1",
+      "Access: Color.RED",
+      ".name and .value properties"
+    ],
+    "solution": "from enum import Enum\n\nclass Color(Enum):\n    RED = 1\n    GREEN = 2\n    BLUE = 3\n\nc = Color.RED\nprint(c)\nprint(f'Name: {c.name}, Value: {c.value}')",
+    "expected_output": "Color.RED\nName: RED, Value: 1\n"
+  },
+  {
+    "id": "adv_024",
+    "title": "Abstract Base Class",
+    "difficulty": "Advanced",
+    "category": "Advanced",
+    "description": "Create an abstract base class 'Shape' with abstract method 'area'. Implement a 'Square' subclass.",
+    "starter_code": "from abc import ABC, abstractmethod\n\n# Define abstract Shape and Square\n\n# Test\n",
+    "hints": [
+      "Inherit from ABC",
+      "@abstractmethod decorator",
+      "Subclass must implement abstract methods"
+    ],
+    "solution": "from abc import ABC, abstractmethod\n\nclass Shape(ABC):\n    @abstractmethod\n    def area(self):\n        pass\n\nclass Square(Shape):\n    def __init__(self, side):\n        self.side = side\n    \n    def area(self):\n        return self.side ** 2\n\ns = Square(4)\nprint(s.area())",
+    "expected_output": "16\n"
+  },
+  {
+    "id": "adv_025",
+    "title": "Type Hints",
+    "difficulty": "Intermediate",
+    "category": "Advanced",
+    "description": "Create a function with type hints that takes a list of integers and returns their sum.",
+    "starter_code": "# Define typed function\n\n# Test\n",
+    "hints": [
+      "Use : for parameter types",
+      "Use -> for return type",
+      "list[int] for list of integers"
+    ],
+    "solution": "def sum_numbers(numbers: list[int]) -> int:\n    return sum(numbers)\n\nresult: int = sum_numbers([1, 2, 3, 4, 5])\nprint(result)",
+    "expected_output": "15\n"
+  },
+  {
+    "id": "except_008",
+    "title": "Context Manager Protocol",
+    "difficulty": "Advanced",
+    "category": "Exception Handling",
+    "description": "Create a context manager using contextlib.contextmanager decorator that prints entering and exiting.",
+    "starter_code": "from contextlib import contextmanager\n\n# Define context manager\n\n# Test\n",
+    "hints": [
+      "@contextmanager decorator",
+      "yield separates enter and exit",
+      "Code before yield runs on enter"
+    ],
+    "solution": "from contextlib import contextmanager\n\n@contextmanager\ndef managed_resource():\n    print('Entering')\n    yield 'resource'\n    print('Exiting')\n\nwith managed_resource() as r:\n    print(f'Using {r}')",
+    "expected_output": "Entering\nUsing resource\nExiting\n"
+  },
+  {
+    "id": "except_009",
+    "title": "Suppress Exceptions",
+    "difficulty": "Advanced",
+    "category": "Exception Handling",
+    "description": "Use contextlib.suppress to ignore a FileNotFoundError when trying to delete a non-existent file.",
+    "starter_code": "from contextlib import suppress\nimport os\n\n# Suppress FileNotFoundError\n",
+    "hints": [
+      "suppress(*exceptions) context manager",
+      "Silently ignores specified exceptions",
+      "Code continues after block"
+    ],
+    "solution": "from contextlib import suppress\nimport os\n\nwith suppress(FileNotFoundError):\n    os.remove('nonexistent_file.txt')\n\nprint('Continued without error')",
+    "expected_output": "Continued without error\n"
+  },
+  {
+    "id": "func_021",
+    "title": "Docstring",
+    "difficulty": "Beginner",
+    "category": "Functions",
+    "description": "Create a function with a proper docstring including description, parameters, and return value. Access it with __doc__.",
+    "starter_code": "# Define function with docstring\n\n# Print docstring\n",
+    "hints": [
+      "Triple quotes for docstring",
+      "Place immediately after def",
+      "Access with func.__doc__"
+    ],
+    "solution": "def calculate_area(length, width):\n    \"\"\"Calculate the area of a rectangle.\n    \n    Args:\n        length: The length of the rectangle\n        width: The width of the rectangle\n    \n    Returns:\n        The area (length * width)\n    \"\"\"\n    return length * width\n\nprint(calculate_area.__doc__)",
+    "expected_output": "Calculate the area of a rectangle.\n    \n    Args:\n        length: The length of the rectangle\n        width: The width of the rectangle\n    \n    Returns:\n        The area (length * width)\n    \n"
+  },
+  {
+    "id": "func_022",
+    "title": "Sorted with Key",
+    "difficulty": "Intermediate",
+    "category": "Functions",
+    "description": "Sort a list of tuples [(3,'c'), (1,'a'), (2,'b')] by the second element using a key function.",
+    "starter_code": "items = [(3, 'c'), (1, 'a'), (2, 'b')]\n\n# Sort by second element\n",
+    "hints": [
+      "Use key parameter in sorted()",
+      "key is a function that extracts sort key",
+      "Lambda or itemgetter work"
+    ],
+    "solution": "items = [(3, 'c'), (1, 'a'), (2, 'b')]\n\nsorted_items = sorted(items, key=lambda x: x[1])\nprint(sorted_items)",
+    "expected_output": "[(1, 'a'), (2, 'b'), (3, 'c')]\n"
+  },
+  {
+    "id": "syntax_019",
+    "title": "Identity vs Equality",
+    "difficulty": "Beginner",
+    "category": "Syntax",
+    "description": "Demonstrate the difference between 'is' (identity) and '==' (equality). Create two lists with same content and compare.",
+    "starter_code": "list1 = [1, 2, 3]\nlist2 = [1, 2, 3]\nlist3 = list1\n\n# Compare using == and is\n",
+    "hints": [
+      "== compares values",
+      "'is' compares object identity (same object)",
+      "list3 = list1 creates alias, not copy"
+    ],
+    "solution": "list1 = [1, 2, 3]\nlist2 = [1, 2, 3]\nlist3 = list1\n\nprint(f'list1 == list2: {list1 == list2}')\nprint(f'list1 is list2: {list1 is list2}')\nprint(f'list1 is list3: {list1 is list3}')",
+    "expected_output": "list1 == list2: True\nlist1 is list2: False\nlist1 is list3: True\n"
+  },
+  {
+    "id": "syntax_020",
+    "title": "None Check",
+    "difficulty": "Beginner",
+    "category": "Syntax",
+    "description": "Create a variable set to None. Check if it's None using 'is None' and print appropriate message.",
+    "starter_code": "value = None\n\n# Check if None\n",
+    "hints": [
+      "Use 'is None' not '== None'",
+      "'is' is preferred for None comparison",
+      "None is Python's null value"
+    ],
+    "solution": "value = None\n\nif value is None:\n    print('Value is None')\nelse:\n    print(f'Value is {value}')",
+    "expected_output": "Value is None\n"
+  },
+  {
+    "id": "control_022",
+    "title": "Reverse Iteration",
+    "difficulty": "Beginner",
+    "category": "Control Flow",
+    "description": "Iterate through [1, 2, 3, 4, 5] in reverse order and print each number.",
+    "starter_code": "numbers = [1, 2, 3, 4, 5]\n\n# Iterate in reverse\n",
+    "hints": [
+      "Use reversed() function",
+      "Or use slicing [::-1]",
+      "reversed() returns an iterator"
+    ],
+    "solution": "numbers = [1, 2, 3, 4, 5]\n\nfor num in reversed(numbers):\n    print(num)",
+    "expected_output": "5\n4\n3\n2\n1\n"
+  },
+  {
+    "id": "data_025",
+    "title": "List Copy vs Reference",
+    "difficulty": "Beginner",
+    "category": "Data Structures",
+    "description": "Demonstrate shallow copy of a list. Create original [1,2,3], make a copy, modify the copy, show original unchanged.",
+    "starter_code": "original = [1, 2, 3]\n\n# Make copy, modify, show both\n",
+    "hints": [
+      "Use .copy() or list() or [:]",
+      "Shallow copy creates new list",
+      "Changes to copy don't affect original"
+    ],
+    "solution": "original = [1, 2, 3]\n\ncopy = original.copy()\ncopy.append(4)\n\nprint(f'Original: {original}')\nprint(f'Copy: {copy}')",
+    "expected_output": "Original: [1, 2, 3]\nCopy: [1, 2, 3, 4]\n"
+  },
+  {
+    "id": "data_026",
+    "title": "Dictionary Merge",
+    "difficulty": "Intermediate",
+    "category": "Data Structures",
+    "description": "Merge two dictionaries: {'a': 1, 'b': 2} and {'b': 3, 'c': 4}. Show the result where second dict values override.",
+    "starter_code": "dict1 = {'a': 1, 'b': 2}\ndict2 = {'b': 3, 'c': 4}\n\n# Merge dictionaries\n",
+    "hints": [
+      "Use | operator (Python 3.9+)",
+      "Or {**dict1, **dict2}",
+      "Later values override earlier ones"
+    ],
+    "solution": "dict1 = {'a': 1, 'b': 2}\ndict2 = {'b': 3, 'c': 4}\n\nmerged = {**dict1, **dict2}\nprint(merged)",
+    "expected_output": "{'a': 1, 'b': 3, 'c': 4}\n"
+  },
+  {
+    "id": "func_023",
+    "title": "Positional-Only Parameters",
+    "difficulty": "Advanced",
+    "category": "Functions",
+    "description": "Create a function with positional-only parameters (using /) that calculates power. Test it.",
+    "starter_code": "# Define function with positional-only params\n\n# Test\n",
+    "hints": [
+      "Parameters before / are positional-only",
+      "Cannot be passed as keyword args",
+      "def func(a, b, /): ..."
+    ],
+    "solution": "def power(base, exp, /):\n    return base ** exp\n\nprint(power(2, 3))\nprint(power(5, 2))",
+    "expected_output": "8\n25\n"
+  },
+  {
+    "id": "adv_026",
+    "title": "Slots",
+    "difficulty": "Advanced",
+    "category": "Advanced",
+    "description": "Create a class using __slots__ to optimize memory. Define a Point class with x and y slots.",
+    "starter_code": "# Define Point class with __slots__\n\n# Test\n",
+    "hints": [
+      "__slots__ = ['x', 'y']",
+      "Prevents dynamic attribute creation",
+      "More memory efficient"
+    ],
+    "solution": "class Point:\n    __slots__ = ['x', 'y']\n    \n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\np = Point(3, 4)\nprint(f'Point: ({p.x}, {p.y})')",
+    "expected_output": "Point: (3, 4)\n"
+  },
+  {
+    "id": "adv_027",
+    "title": "ChainMap",
+    "difficulty": "Advanced",
+    "category": "Advanced",
+    "description": "Use ChainMap to combine multiple dictionaries for lookup. Create defaults and user settings, then lookup values.",
+    "starter_code": "from collections import ChainMap\n\ndefaults = {'color': 'red', 'size': 'medium'}\nuser_settings = {'color': 'blue'}\n\n# Use ChainMap\n",
+    "hints": [
+      "ChainMap(dict1, dict2, ...)",
+      "Searches dicts in order",
+      "First found value wins"
+    ],
+    "solution": "from collections import ChainMap\n\ndefaults = {'color': 'red', 'size': 'medium'}\nuser_settings = {'color': 'blue'}\n\nsettings = ChainMap(user_settings, defaults)\n\nprint(f\"color: {settings['color']}\")\nprint(f\"size: {settings['size']}\")",
+    "expected_output": "color: blue\nsize: medium\n"
+  },
+  {
+    "id": "handling_013",
+    "title": "Path Operations",
+    "difficulty": "Intermediate",
+    "category": "Data Handling",
+    "description": "Use pathlib to work with file paths. Create a Path, get parent, name, and suffix.",
+    "starter_code": "from pathlib import Path\n\nfile_path = Path('/home/user/documents/report.pdf')\n\n# Get path components\n",
+    "hints": [
+      "Path.parent gets parent directory",
+      "Path.name gets filename",
+      "Path.suffix gets extension"
+    ],
+    "solution": "from pathlib import Path\n\nfile_path = Path('/home/user/documents/report.pdf')\n\nprint(f'Parent: {file_path.parent}')\nprint(f'Name: {file_path.name}')\nprint(f'Suffix: {file_path.suffix}')",
+    "expected_output": "Parent: /home/user/documents\nName: report.pdf\nSuffix: .pdf\n"
   }
 ]
 
