@@ -19,6 +19,9 @@ from ui.components import (
     render_sidebar,
     render_solution_toggle,
     render_welcome_message,
+    render_score_header,
+    calculate_total_points,
+    calculate_earned_points,
 )
 
 # Page configuration
@@ -105,6 +108,12 @@ def initialize_session_state():
     if "check_result" not in st.session_state:
         st.session_state.check_result = None
 
+    if "completed_problems" not in st.session_state:
+        st.session_state.completed_problems = set()
+
+    if "reset_counter" not in st.session_state:
+        st.session_state.reset_counter = {}
+
 
 def get_current_code(problem_id: str, starter_code: str) -> str:
     """Get the current code for a problem, or return starter code."""
@@ -126,6 +135,12 @@ def main():
 
     loader = st.session_state.problem_loader
     problems = loader.get_all_problems()
+    completed_ids = st.session_state.completed_problems
+
+    # Calculate and render score header
+    total_points = calculate_total_points(problems)
+    earned_points = calculate_earned_points(problems, completed_ids)
+    render_score_header(earned_points, total_points)
 
     # Render sidebar and get selections
     category, difficulty, clicked_problem_id = render_sidebar(
@@ -134,6 +149,7 @@ def main():
         problems=problems,
         selected_category=st.session_state.selected_category,
         selected_difficulty=st.session_state.selected_difficulty,
+        completed_problem_ids=completed_ids,
     )
 
     # Update session state with filter selections
@@ -158,21 +174,30 @@ def main():
         render_problem_view(current_problem)
 
 
+def get_reset_counter(problem_id: str) -> int:
+    """Get the reset counter for a problem (used to force code editor refresh)."""
+    if problem_id not in st.session_state.reset_counter:
+        st.session_state.reset_counter[problem_id] = 0
+    return st.session_state.reset_counter[problem_id]
+
+
 def render_problem_view(problem: dict):
     """Render the problem view with editor and controls."""
     problem_id = problem["id"]
+    is_completed = problem_id in st.session_state.completed_problems
 
     # Problem card
-    render_problem_card(problem)
+    render_problem_card(problem, is_completed=is_completed)
 
     # Code editor
     starter_code = problem.get("starter_code", "# Write your code here\n")
     current_code = get_current_code(problem_id, starter_code)
+    reset_count = get_reset_counter(problem_id)
 
-    # Use a form to prevent re-runs on every keystroke
+    # Use reset_count in key to force re-render when reset is clicked
     code = render_code_editor(
         starter_code=current_code,
-        key=f"code_editor_{problem_id}",
+        key=f"code_editor_{problem_id}_{reset_count}",
     )
 
     # Update stored code
@@ -228,10 +253,13 @@ def render_problem_view(problem: dict):
     col1, col2, col3 = st.columns([1, 1, 4])
     with col1:
         if st.button("🔄 Reset Code", type="secondary"):
-            st.session_state.current_code[problem_id] = problem.get("starter_code", "")
+            # Reset code to starter code
+            st.session_state.current_code[problem_id] = starter_code
             st.session_state.execution_result = None
             st.session_state.check_result = None
             st.session_state.hint_index[problem_id] = 0
+            # Increment reset counter to force editor re-render with new key
+            st.session_state.reset_counter[problem_id] = reset_count + 1
             st.rerun()
 
     with col2:
@@ -253,6 +281,10 @@ def handle_check_solution(code: str, problem: dict):
     st.session_state.execution_result = None
     result = check_solution(code, problem)
     st.session_state.check_result = result
+
+    # Track completed problems
+    if result.is_correct:
+        st.session_state.completed_problems.add(problem["id"])
 
 
 def handle_hint_click(problem_id: str, total_hints: int):

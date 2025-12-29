@@ -3,14 +3,65 @@
 import streamlit as st
 from typing import Optional
 
+# Point values for each difficulty level
+DIFFICULTY_POINTS = {
+    "Beginner": 1,
+    "Intermediate": 2,
+    "Advanced": 4,
+}
 
-def render_problem_card(problem: dict) -> None:
+
+def get_problem_points(problem: dict) -> int:
+    """Get the point value for a problem based on its difficulty."""
+    return DIFFICULTY_POINTS.get(problem.get("difficulty", "Beginner"), 1)
+
+
+def calculate_total_points(problems: list[dict]) -> int:
+    """Calculate the total possible points from all problems."""
+    return sum(get_problem_points(p) for p in problems)
+
+
+def calculate_earned_points(problems: list[dict], completed_ids: set[str]) -> int:
+    """Calculate the points earned from completed problems."""
+    return sum(get_problem_points(p) for p in problems if p["id"] in completed_ids)
+
+
+def render_score_header(earned_points: int, total_points: int) -> None:
+    """Render the score counter in the top right."""
+    st.markdown(
+        f"""
+        <div style="
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        ">
+            <span style="font-size: 24px;">⭐</span>
+            <span>{earned_points} / {total_points}</span>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def render_problem_card(problem: dict, is_completed: bool = False) -> None:
     """Render a problem card with title, difficulty, and description."""
     # Header with title and badges
-    col1, col2, col3 = st.columns([3, 1, 1])
+    col1, col2, col3, col4 = st.columns([3, 1, 1, 0.5])
 
     with col1:
-        st.markdown(f"### {problem['title']}")
+        completed_badge = "✅ " if is_completed else ""
+        st.markdown(f"### {completed_badge}{problem['title']}")
 
     with col2:
         difficulty = problem["difficulty"]
@@ -23,6 +74,10 @@ def render_problem_card(problem: dict) -> None:
 
     with col3:
         st.markdown(f"📁 {problem['category']}")
+
+    with col4:
+        points = get_problem_points(problem)
+        st.markdown(f"⭐ **{points}**")
 
     # Description
     st.markdown("---")
@@ -188,6 +243,7 @@ def render_sidebar(
     problems: list[dict],
     selected_category: str,
     selected_difficulty: str,
+    completed_problem_ids: set[str] = None,
 ) -> tuple[str, str, Optional[str]]:
     """
     Render the sidebar with problem navigation.
@@ -198,10 +254,14 @@ def render_sidebar(
         problems: List of all problems
         selected_category: Currently selected category
         selected_difficulty: Currently selected difficulty
+        completed_problem_ids: Set of completed problem IDs
 
     Returns:
         Tuple of (category, difficulty, selected_problem_id)
     """
+    if completed_problem_ids is None:
+        completed_problem_ids = set()
+
     st.sidebar.title("🐍 Python Coach")
     st.sidebar.markdown("Learn Python interactively!")
     st.sidebar.markdown("---")
@@ -232,19 +292,27 @@ def render_sidebar(
     if difficulty != "All":
         filtered_problems = [p for p in filtered_problems if p["difficulty"] == difficulty]
 
+    # Count completed in filtered
+    completed_in_filter = sum(1 for p in filtered_problems if p["id"] in completed_problem_ids)
+
     # Problem list
-    st.sidebar.markdown(f"### 📚 Problems ({len(filtered_problems)})")
+    st.sidebar.markdown(f"### 📚 Problems ({completed_in_filter}/{len(filtered_problems)})")
 
     selected_problem_id = None
     for problem in filtered_problems:
+        is_completed = problem["id"] in completed_problem_ids
         difficulty_icon = {
             "Beginner": "🟢",
             "Intermediate": "🟡",
             "Advanced": "🔴",
         }.get(problem["difficulty"], "⚪")
 
+        # Add checkmark for completed problems
+        completed_mark = "✅ " if is_completed else ""
+        points = DIFFICULTY_POINTS.get(problem["difficulty"], 1)
+
         if st.sidebar.button(
-            f"{difficulty_icon} {problem['title']}",
+            f"{completed_mark}{difficulty_icon} {problem['title']} (+{points})",
             key=f"problem_{problem['id']}",
             use_container_width=True,
         ):
