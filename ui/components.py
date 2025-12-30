@@ -366,3 +366,42 @@ def render_progress_indicator(completed: int, total: int) -> None:
         st.sidebar.progress(progress)
         st.sidebar.caption(f"Progress: {completed}/{total} problems")
 
+
+def render_progress_section(
+    earned_points: int,
+    total_points: int,
+    completed_count: int,
+    total_problems: int,
+) -> bool:
+    """
+    Render the progress section in the sidebar.
+    
+    Returns:
+        True if reset button was clicked, False otherwise.
+    """
+    st.sidebar.markdown("---")
+    st.sidebar.markdown("### 📊 Your Progress")
+    
+    # Progress bar
+    if total_problems > 0:
+        progress = completed_count / total_problems
+        st.sidebar.progress(progress)
+    
+    # Stats
+    st.sidebar.markdown(f"**Problems:** {completed_count} / {total_problems}")
+    st.sidebar.markdown(f"**Points:** {earned_points} / {total_points}")
+    
+    # Save indicator
+    st.sidebar.caption("💾 Progress auto-saved locally")
+    
+    # Reset button
+    st.sidebar.markdown("---")
+    reset_clicked = st.sidebar.button(
+        "🗑️ Reset All Progress",
+        type="secondary",
+        use_container_width=True,
+        help="This will clear all your progress and start fresh"
+    )
+    
+    return reset_clicked
+
