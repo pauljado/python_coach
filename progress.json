@@ -1,6 +1,23 @@
 {
   "completed_problems": [
-    "syntax_001"
+    "func_003",
+    "syntax_005",
+    "syntax_001",
+    "func_004",
+    "control_004",
+    "func_002",
+    "control_007",
+    "control_001",
+    "control_005",
+    "syntax_002",
+    "syntax_003",
+    "control_002",
+    "control_006",
+    "func_001",
+    "syntax_004",
+    "control_003"
   ],
-  "hint_usage": {}
+  "hint_usage": {
+    "control_007": 3
+  }
 }
