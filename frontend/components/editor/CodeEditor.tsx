@@ -20,12 +20,13 @@ export function CodeEditor({
   language = "python",
 }: CodeEditorProps) {
   const editorRef = useRef<any>(null);
+  const { theme, resolvedTheme } = useTheme();
 
   const handleEditorDidMount = (editor: any) => {
     editorRef.current = editor;
   };
 
-  const isDark = typeof window !== "undefined" && document.documentElement.classList.contains("dark");
+  const isDark = resolvedTheme === "dark" || theme === "dark";
 
   return (
     <div className="monaco-editor-container border border-gray-300 dark:border-gray-700 rounded-lg overflow-hidden">

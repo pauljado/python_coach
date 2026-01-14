@@ -4,20 +4,20 @@
 
 import { useProgressStore } from "@/lib/store/progressStore";
 import { Moon, Sun } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export function Header() {
   const stats = useProgressStore((state) => state.stats);
-  const [darkMode, setDarkMode] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const isDark = document.documentElement.classList.contains("dark");
-    setDarkMode(isDark);
+    setMounted(true);
   }, []);
 
   const toggleDarkMode = () => {
-    document.documentElement.classList.toggle("dark");
-    setDarkMode(!darkMode);
+    setTheme(theme === "dark" ? "light" : "dark");
   };
 
   return (
@@ -44,7 +44,11 @@ export function Header() {
             className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             aria-label="Toggle dark mode"
           >
-            {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            {mounted && theme === "dark" ? (
+              <Sun className="w-5 h-5" />
+            ) : (
+              <Moon className="w-5 h-5" />
+            )}
           </button>
         </div>
       </div>
